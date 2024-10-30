@@ -1,4 +1,4 @@
-import { Node } from "../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../shared/Schemas/NodeSchema.ts";
 
 export const isNodeMatchString = (node: Node, search: string) => {
   if (!search) {

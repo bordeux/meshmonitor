@@ -2,8 +2,8 @@ import { initReactI18next } from "react-i18next";
 import Locales from "./locales";
 
 import { format as formatDate, isDate } from "date-fns";
-import i18n, { FormatFunction } from "i18next"; // import all locales we need
-import mapValues from "lodash/mapValues";
+import i18n, { FormatFunction } from "i18next";
+import { mapValues } from "./helpers/mapValues.ts"; // import all locales we need
 
 const STORE_KEY = "app_lang";
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import "leaflet/dist/leaflet.css";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { getDisplayNodeName } from "../../helpers/getDisplayNodeName.ts";
 import NodePopover from "../NodePopover";
 

@@ -1,4 +1,5 @@
-import { MAIN_CHANNEL_ID, Node } from "../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../shared/Schemas/NodeSchema.ts";
+import { MAIN_CHANNEL_ID } from "../../shared/Schemas/Consts.ts";
 
 export const getDisplayNodeName = (node: Node | undefined): string => {
   if (!node) {

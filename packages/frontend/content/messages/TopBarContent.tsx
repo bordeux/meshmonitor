@@ -2,7 +2,7 @@ import { Box, styled, Typography } from "@mui/material";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import { RecordId } from "surrealdb";
 import { useLiveRecord } from "../../services/db/useQuery.ts";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import NodeAvatar from "../../components/NodeAvatar";
 import TimeAgo from "../../components/TimeAgo";
 import * as React from "react";

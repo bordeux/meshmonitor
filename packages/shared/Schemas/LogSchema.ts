@@ -10,6 +10,8 @@ const LogSchema = z
     node_to: NodeSchema,
     time: z.instanceof(Date).optional(),
     type: z.string(),
+    node_from_id: z.string(),
+    node_to_id: z.string(),
     data: z.any(),
   })
   .required();

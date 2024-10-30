@@ -2,7 +2,7 @@ import * as React from "react";
 import "leaflet/dist/leaflet.css";
 import { Alert, Box, ListItemText, Stack } from "@mui/material";
 import { useLiveRecord } from "../../services/db/useQuery.ts";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { RecordId } from "surrealdb";
 import { styled } from "@mui/material/styles";
 import MapIcon from "@mui/icons-material/Map";

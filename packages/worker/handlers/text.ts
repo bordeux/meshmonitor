@@ -5,7 +5,7 @@ import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { insert } from "../services/db/insert";
-import { MAIN_CHANNEL_ID } from "../../shared/Schemas/NodeSchema";
+import { MAIN_CHANNEL_ID } from "../../shared/Schemas/Consts.ts";
 
 const isChannelMessage = (from: RecordId, to: RecordId) => {
   return (

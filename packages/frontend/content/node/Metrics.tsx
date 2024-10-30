@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useLiveRecord } from "../../services/db/useQuery.ts";
 import { RecordId } from "surrealdb";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { useNavigate, useParams } from "react-router-dom";
 import ShowJson from "../../components/ShowJson";
 import { useTranslation } from "react-i18next";

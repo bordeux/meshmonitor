@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import { useQuery } from "../../services/db/useQuery.ts";
-import { MAIN_CHANNEL_ID, Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { getDisplayNodeName } from "../../helpers/getDisplayNodeName.ts";
 import NodeAvatar from "../../components/NodeAvatar";
 import { useNavigate, useParams } from "react-router-dom";
@@ -22,6 +22,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { isNodeMatchString } from "../../helpers/isNodeMatchString.ts";
 import Label from "../../components/Label";
+import { MAIN_CHANNEL_ID } from "../../../shared/Schemas/Consts.ts";
 
 interface ResultItem {
   id: RecordId;

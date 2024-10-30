@@ -5,7 +5,7 @@ import SidebarLayout from "./layouts/SidebarLayout";
 import BaseLayout from "./layouts/BaseLayout";
 
 import * as Lazy from "./router.lazy";
-import { MAIN_CHANNEL_ID } from "../shared/Schemas/NodeSchema.ts";
+import { MAIN_CHANNEL_ID } from "../shared/Schemas/Consts.ts";
 
 const routes: RouteObject[] = [
   {

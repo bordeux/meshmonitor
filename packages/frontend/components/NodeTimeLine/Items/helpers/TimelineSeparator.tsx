@@ -5,7 +5,7 @@ import TimelineSeparatorBase from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineDot from "@mui/lab/TimelineDot";
 import ShowJson from "../../../ShowJson";
-import { Log } from "../../../../../shared/Schemas/LogSchema.ts";
+import type { Log } from "../../../../../shared/Schemas/LogSchema.ts";
 
 interface TimelineSeparator {
   log: Log;

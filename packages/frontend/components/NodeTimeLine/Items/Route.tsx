@@ -10,7 +10,7 @@ import { yellow } from "@mui/material/colors";
 import TimelineSeparator from "./helpers/TimelineSeparator.tsx";
 import { getNode } from "../helpers/getNode.ts";
 import { RecordId } from "surrealdb";
-import { Node } from "../../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../../shared/Schemas/NodeSchema.ts";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import TimeAgo from "../../TimeAgo";
 import { Trans } from "react-i18next";

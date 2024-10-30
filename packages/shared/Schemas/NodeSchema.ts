@@ -3,7 +3,6 @@ import { GeometryPoint, RecordId } from "surrealdb";
 import { Config_DeviceConfig_Role } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/config_pb";
 import { HardwareModel } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/mesh_pb";
 
-export const MAIN_CHANNEL_ID = "ffffffff";
 export const NodeSchema = z.object({
   id: z.instanceof(RecordId),
   long_name: z.string().optional(),

@@ -1,5 +1,5 @@
-import { Log } from "../../../../shared/Schemas/LogSchema.ts";
-import { Node } from "../../../../shared/Schemas/NodeSchema.ts";
+import type { Log } from "../../../../shared/Schemas/LogSchema";
+import type { Node } from "../../../../shared/Schemas/NodeSchema";
 
 export const getNode = (log: Log, type: "from" | "to"): Node => {
   if (type === "from") {

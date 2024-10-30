@@ -5,9 +5,9 @@ import ChatContent from "./ChatContent.tsx";
 import { useQuery } from "../../services/db/useQuery.ts";
 import { useParams } from "react-router-dom";
 import { RecordId } from "surrealdb";
-import { MAIN_CHANNEL_ID } from "../../../shared/Schemas/NodeSchema.ts";
-import { Message } from "../../../shared/Schemas/MessageSchema.ts";
+import type { Message } from "../../../shared/Schemas/MessageSchema.ts";
 import { useState } from "react";
+import { MAIN_CHANNEL_ID } from "../../../shared/Schemas/Consts.ts";
 
 const Root = styled(Box)(
   () => `

@@ -6,7 +6,6 @@ import "nprogress/nprogress.css";
 import App from "./App.tsx";
 import { SidebarProvider } from "./contexts/SidebarContext";
 import * as serviceWorker from "./serviceWorker";
-import "./sentry";
 import "./i18n";
 
 (async () => {

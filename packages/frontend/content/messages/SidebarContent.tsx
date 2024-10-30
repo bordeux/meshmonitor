@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import { useLiveQuery } from "../../services/db/useQuery.ts";
-import { MAIN_CHANNEL_ID, Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { getDisplayNodeName } from "../../helpers/getDisplayNodeName.ts";
 import NodeAvatar from "../../components/NodeAvatar";
 import { useNavigate, useParams } from "react-router-dom";
@@ -19,6 +19,7 @@ import { generatePath } from "../../helpers/generatePath.ts";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { isNodeMatchString } from "../../helpers/isNodeMatchString.ts";
+import { MAIN_CHANNEL_ID } from "../../../shared/Schemas/Consts.ts";
 
 export const RootWrapper = styled(Box)(
   ({ theme }) => `

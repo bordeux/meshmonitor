@@ -3,7 +3,7 @@ import {
   GridRenderCellParams,
   GridRowParams,
 } from "@mui/x-data-grid";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { HardwareModel } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/mesh_pb";
 import { Config_DeviceConfig_Role } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/config_pb";
 import { GeometryPoint } from "surrealdb";

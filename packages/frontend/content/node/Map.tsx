@@ -2,7 +2,7 @@ import * as React from "react";
 import { Box, IconButton, Modal } from "@mui/material";
 import { useLiveRecord } from "../../services/db/useQuery.ts";
 import { RecordId } from "surrealdb";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { useNavigate, useParams } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import CloseIcon from "@mui/icons-material/Close";

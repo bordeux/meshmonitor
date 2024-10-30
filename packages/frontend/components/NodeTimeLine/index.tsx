@@ -22,9 +22,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import CheckIcon from "@mui/icons-material/Check";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import mapValues from "lodash/mapValues";
 import { ItemTypes } from "./Items";
-import { omitBy } from "lodash";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
@@ -34,6 +32,8 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import useLocalStorageState from "ahooks/es/useLocalStorageState";
 import { useTranslation } from "react-i18next";
 import { camelToSnakeCase } from "../../../shared/helpers/camelToSnakeCase.ts";
+import { mapValues } from "../../helpers/mapValues.ts";
+import { omitBy } from "../../helpers/omitBy.ts";
 
 interface NodeTimeLineProps {
   nodeId: string;
@@ -67,7 +67,7 @@ const NodeTimeLine: React.FC<NodeTimeLineProps> = ({ nodeId }) => {
   });
   const { t } = useTranslation("timeline");
 
-  const typesPick = omitBy(selectedEntities, (val) => !val);
+  const typesPick = omitBy(selectedEntities || {}, (val) => !val);
 
   const data = useQuery<Log>(
     `

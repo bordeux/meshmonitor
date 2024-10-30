@@ -3,7 +3,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { useLiveQuery } from "../../services/db/useQuery.ts";
 import { Outlet } from "react-router-dom";
-import { Node } from "../../../shared/Schemas/NodeSchema.ts";
+import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import Suspense from "../../components/Suspense";
 import { columns, defaultVisibilityModel } from "./columns.tsx";
 import DataGrid from "../../components/DataGrid";

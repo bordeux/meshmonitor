@@ -1,5 +1,5 @@
 import { RecordId } from "surrealdb";
-import { MAIN_CHANNEL_ID } from "../../shared/Schemas/NodeSchema";
+import { MAIN_CHANNEL_ID } from "../../shared/Schemas/Consts.ts";
 
 export interface TopicMetadata {
   channelName: string;
