@@ -1,0 +1,21 @@
+{
+  "nodes": "Węzły",
+  "messages": "Wiadomości",
+  "map": "Mapa",
+  "settings": "Ustawienia",
+  "search_terms_here": "Search terms here...",
+  "search": "Szukaj",
+  "load_more": "Załaduj więcej",
+  "change_language": "Zmień język",
+  "intl_number": "{{val, number}}",
+  "delete": "Usuń",
+  "close": "Zamknij",
+  "show": "Pokaż",
+  "timeline": "Oś czasu",
+  "404.title": "Strona którą szukasz nie istnieje.",
+  "404.button": "Powrót do strony głównej",
+  "404.subtitle": "To nasza sprawa, przenieśliśmy treść na inną stronę.",
+  "monitoring": "Monitorowanie",
+  "utils": "Narzędzia",
+  "decodeMessage": "Dekoduj wiadomość"
+}

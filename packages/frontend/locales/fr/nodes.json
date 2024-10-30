@@ -1,0 +1,21 @@
+{
+  "nodes_list": "Liste de nœuds",
+  "short_name": "Nom court",
+  "id": "ID",
+  "long_name": "Nom long",
+  "last_heard": "Dernier entendu",
+  "rx_rssi": "RX RSSI",
+  "rx_snr": "RX SNR",
+  "is_licensed": "Est licencié",
+  "hw_model": "Modèle de matériel",
+  "role": "Rôle",
+  "position": "Position",
+  "environment_metrics": "Mesures de l'environnement",
+  "device_metrics": "Métriques de l'appareil",
+  "has_message": "A un message",
+  "has_info": "A des infos",
+  "has_position": "A une position",
+  "has_device_metrics": "A des métriques d'appareil",
+  "has_environment_metrics": "A des mesures de l'environnement",
+  "actions": "Actions"
+}

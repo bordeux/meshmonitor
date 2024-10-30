@@ -1,0 +1,21 @@
+{
+  "nodes": "Noder",
+  "messages": "Meddelanden",
+  "map": "Karta",
+  "settings": "Inställningar",
+  "search_terms_here": "Söktermer här...",
+  "search": "Sök",
+  "load_more": "Ladda mer",
+  "change_language": "Byt språk",
+  "intl_number": "{{val, number}}",
+  "delete": "Radera",
+  "close": "Stäng",
+  "show": "Visa",
+  "timeline": "Tidslinje",
+  "404.title": "Sidan du sökte finns inte.",
+  "404.button": "Gå till hemsidan",
+  "404.subtitle": "Det är vårt fel, vi har flyttat innehållet till en annan sida.",
+  "monitoring": "Övervakning",
+  "utils": "Verktyg",
+  "decodeMessage": "Dekodera meddelande"
+}

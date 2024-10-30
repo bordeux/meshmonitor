@@ -1,0 +1,6 @@
+{
+  "message_decoder": "Decodificador de mensajes",
+  "message_decoder.description": "Decodifica el mensaje MQTT. Puedes pegar aquí un mensaje en Base64 o crudo",
+  "message_decoder.placeholder": "Pega aquí tu mensaje Mqqt",
+  "decoded_message": "Mensaje decodificado"
+}

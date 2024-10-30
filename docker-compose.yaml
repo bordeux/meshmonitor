@@ -1,0 +1,46 @@
+services:
+  surrealdb:
+    image: surrealdb/surrealdb:latest
+    container_name: surrealdb
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.docker/data/meshtastic.db:/data/meshtastic.db
+    command:
+      - start
+      - --log=trace
+      - --user=root
+      - --pass=${DB_PASSWORD}
+      - rocksdb:/data/meshtastic.db
+    restart: always
+
+  frontend:
+    build:
+      context: .
+      target: frontend  # Specify the stage to build
+    container_name: frontend
+    ports:
+      - "8080:80"
+    environment:
+      - DB_UPSTREAM=http://surrealdb:8000
+    restart: always
+    depends_on:
+      - surrealdb
+
+  worker:
+    build:
+      context: .
+      target: worker  # Specify the stage to build
+    container_name: worker
+    environment:
+      - MQTT_HOST=${MQTT_HOST}
+      - MQTT_PORT=${MQTT_PORT:-1883}
+      - MQTT_USERNAME=${MQTT_USERNAME:-meshtastic}
+      - MQTT_PASSWORD=${MQTT_PASSWORD}
+      - DB_HOST=surrealdb
+      - DB_PORT=8000
+      - DB_USERNAME=root
+      - DB_PASSWORD=${DB_PASSWORD}
+    restart: always
+    depends_on:
+      - surrealdb

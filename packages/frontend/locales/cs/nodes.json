@@ -1,0 +1,21 @@
+{
+  "nodes_list": "Seznam uzlů",
+  "short_name": "Krátké jméno",
+  "id": "ID",
+  "long_name": "Dlouhé jméno",
+  "last_heard": "Poslední vyslech",
+  "rx_rssi": "RX RSSI",
+  "rx_snr": "RX SNR",
+  "is_licensed": "Je licencován",
+  "hw_model": "Model hardware",
+  "role": "Role",
+  "position": "Pozice",
+  "environment_metrics": "Metriky prostředí",
+  "device_metrics": "Metriky zařízení",
+  "has_message": "Má zprávy",
+  "has_info": "Má informaci",
+  "has_position": "Má pozici",
+  "has_device_metrics": "Má metriky zařízení",
+  "has_environment_metrics": "Má metriky prostředí",
+  "actions": "Akce"
+}

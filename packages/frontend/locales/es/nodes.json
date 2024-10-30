@@ -1,0 +1,21 @@
+{
+  "nodes_list": "Lista de nodos",
+  "short_name": "Nombre corto",
+  "id": "ID",
+  "long_name": "Nombre largo",
+  "last_heard": "Última vez escuchado",
+  "rx_rssi": "RX RSSI",
+  "rx_snr": "RX SNR",
+  "is_licensed": "Está licenciado",
+  "hw_model": "Modelo de hardware",
+  "role": "Rol",
+  "position": "Posición",
+  "environment_metrics": "Métricas del entorno",
+  "device_metrics": "Métricas del dispositivo",
+  "has_message": "Tiene mensaje",
+  "has_info": "Tiene información",
+  "has_position": "Tiene posición",
+  "has_device_metrics": "Tiene métricas del dispositivo",
+  "has_environment_metrics": "Tiene métricas del entorno",
+  "actions": "Acciones"
+}

@@ -1,0 +1,6 @@
+{
+  "message_decoder": "Dekodér zpráv",
+  "message_decoder.description": "Dekódujte zprávu MQTT. Můžete sem vložit Base64 nebo surovou zprávu",
+  "message_decoder.placeholder": "Vložte sem svou zprávu Mqqt",
+  "decoded_message": "Dekódovaná zpráva"
+}

@@ -1,0 +1,21 @@
+{
+  "nodes_list": "Nodlista",
+  "short_name": "Kort namn",
+  "id": "ID",
+  "long_name": "Långt namn",
+  "last_heard": "Senast hörd",
+  "rx_rssi": "RX RSSI",
+  "rx_snr": "RX SNR",
+  "is_licensed": "Är licensierad",
+  "hw_model": "Hårdvarumodell",
+  "role": "Roll",
+  "position": "Position",
+  "environment_metrics": "Miljömetriker",
+  "device_metrics": "Enhetens metriker",
+  "has_message": "Har meddelande",
+  "has_info": "Har information",
+  "has_position": "Har position",
+  "has_device_metrics": "Har enhetens metriker",
+  "has_environment_metrics": "Har miljömetriker",
+  "actions": "Åtgärder"
+}

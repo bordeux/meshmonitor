@@ -1,0 +1,21 @@
+{
+  "nodes": "Knoten",
+  "messages": "Nachrichten",
+  "map": "Karte",
+  "settings": "Einstellungen",
+  "search_terms_here": "Suchbegriffe hier eintragen...",
+  "search": "Suchen",
+  "load_more": "Mehr laden",
+  "change_language": "Sprache ändern",
+  "intl_number": "{{val, number}}",
+  "delete": "Löschen",
+  "close": "Schließen",
+  "show": "Anzeigen",
+  "timeline": "Zeitleiste",
+  "404.title": "Die Seite, die du gesucht hast, existiert nicht.",
+  "404.button": "Zur Startseite gehen",
+  "404.subtitle": "Es liegt an uns, wir haben den Inhalt auf eine andere Seite verschoben.",
+  "monitoring": "Überwachung",
+  "utils": "Utils",
+  "decodeMessage": "Nachricht dekodieren"
+}

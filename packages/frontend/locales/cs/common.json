@@ -1,0 +1,21 @@
+{
+  "nodes": "Uzly",
+  "messages": "Zprávy",
+  "map": "Mapa",
+  "settings": "Nastavení",
+  "search_terms_here": "Hledejte zde termíny...",
+  "search": "Hledat",
+  "load_more": "Nahrát více",
+  "change_language": "Změnit jazyk",
+  "intl_number": "{{val, number}}",
+  "delete": "Smazat",
+  "close": "Zavřít",
+  "show": "Ukázat",
+  "timeline": "Časová osa",
+  "404.title": "Stránka, kterou jste hledali, neexistuje.",
+  "404.button": "Přejít na hlavní stránku",
+  "404.subtitle": "Je to na nás, přesunuli jsme obsah na jinou stránku.",
+  "monitoring": "Monitorování",
+  "utils": "Nástroje",
+  "decodeMessage": "Dekódování zpráv"
+}

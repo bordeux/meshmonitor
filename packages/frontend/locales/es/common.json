@@ -1,0 +1,21 @@
+{
+  "nodes": "Nodos",
+  "messages": "Mensajes",
+  "map": "Mapa",
+  "settings": "Ajustes",
+  "search_terms_here": "Busca términos aquí...",
+  "search": "Buscar",
+  "load_more": "Cargar más",
+  "change_language": "Cambiar idioma",
+  "intl_number": "{{val, number}}",
+  "delete": "Eliminar",
+  "close": "Cerrar",
+  "show": "Mostrar",
+  "timeline": "Cronología",
+  "404.title": "La página que estabas buscando no existe.",
+  "404.button": "Ir a la página de inicio",
+  "404.subtitle": "Es por nosotros, hemos movido el contenido a una página diferente.",
+  "monitoring": "Monitoreo",
+  "utils": "Utilidades",
+  "decodeMessage": "Decodificar mensaje"
+}

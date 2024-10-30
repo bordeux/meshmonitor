@@ -1,0 +1,21 @@
+{
+  "nodes": "Nœuds",
+  "messages": "Messages",
+  "map": "Carte",
+  "settings": "Paramètres",
+  "search_terms_here": "Rechercher des termes ici...",
+  "search": "Rechercher",
+  "load_more": "Charger plus",
+  "change_language": "Changer de langue",
+  "intl_number": "{{val, number}}",
+  "delete": "Supprimer",
+  "close": "Fermer",
+  "show": "Montrer",
+  "timeline": "Chronologie",
+  "404.title": "La page que vous cherchiez n'existe pas.",
+  "404.button": "Retourner à la page d'accueil",
+  "404.subtitle": "C'est de notre faute, nous avons déplacé le contenu vers une autre page.",
+  "monitoring": "Surveillance",
+  "utils": "Utilitaires",
+  "decodeMessage": "Décoder le Message"
+}

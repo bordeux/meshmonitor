@@ -1,0 +1,6 @@
+{
+  "message_decoder": "Meddelandedekoder",
+  "message_decoder.description": "Dekodera MQTT-meddelande. Du kan klistra in Base64 eller rått meddelande här",
+  "message_decoder.placeholder": "Klistra in ditt Mqqt-meddelande här",
+  "decoded_message": "Dekoderat meddelande"
+}

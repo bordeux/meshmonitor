@@ -1,0 +1,6 @@
+{
+  "message_decoder": "Dekoder wiadomości",
+  "message_decoder.description": "Dekoduj wiadomość MQTT. Możesz wkleić tutaj wiadomość Base64 lub surową wiadomość",
+  "message_decoder.placeholder": "Wklej tutaj swoją wiadomość Mqqt",
+  "decoded_message": "Zdekodowana wiadomość"
+}

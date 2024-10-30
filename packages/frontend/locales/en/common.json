@@ -1,0 +1,21 @@
+{
+  "nodes": "Nodes",
+  "messages": "Messages",
+  "map": "Map",
+  "settings": "Settings",
+  "search_terms_here": "Search terms here...",
+  "search": "Search",
+  "load_more": "Load more",
+  "change_language": "Change language",
+  "intl_number": "{{val, number}}",
+  "delete": "Delete",
+  "close": "Close",
+  "show": "Show",
+  "timeline": "Timeline",
+  "404.title" :  "The page you were looking for doesn't exist.",
+  "404.button" :  "Go to homepage",
+  "404.subtitle": "It's on us, we moved the content to a different page.",
+  "monitoring": "Monitoring",
+  "utils": "Utils",
+  "decodeMessage": "Decode Message"
+}

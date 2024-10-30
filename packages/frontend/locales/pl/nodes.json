@@ -1,0 +1,22 @@
+{
+  "nodes_list": "Lista węzłów",
+  "short_name": "Nazwa krótka",
+  "id": "ID",
+  "long_name": "Długa nazwa",
+  "last_heard": "Ostatnio słyszany",
+  "rx_rssi": "RX RSSI",
+  "rx_snr": "RX SNR",
+  "is_licensed": "Licencjonowany",
+  "hw_model": "Model urządzenia",
+  "role": "Rola",
+  "position": "Pozycja",
+  "environment_metrics": "Metryki środowiskowe",
+  "device_metrics": "Metryki urządzenia",
+  "has_message": "Posiada wiadomości",
+  "has_info": "Posiada informacje",
+  "has_position": "Posiada lokalizacje",
+  "has_device_metrics": "Posiada metryki urządzenia",
+  "has_environment_metrics": "Posiada metryki środowiska",
+  "actions": "Akcje",
+  "timeline": "Oś czasu"
+}
