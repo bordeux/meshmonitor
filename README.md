@@ -47,7 +47,7 @@ Mini project, what takes ENV variables and generates config.js file, which is us
 ## Running locally via docker
 1. Clone the repository
 2. Run `cp .env.docker.example .env.docker` and update values in .env.docker file like your MQTT credentials and default root password to database
-3. Run 'set -a && source .env.docker && docker compose up'
+3. Run 'set -a && source .env.docker && docker compose up --build'
 4. Open `http://localhost:8080` in your browser
 
 

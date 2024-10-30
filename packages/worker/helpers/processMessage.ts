@@ -7,8 +7,9 @@ import { ProcessingError } from "../errors/ProcessingError";
 
 export const processMessage = async (topic: string, message: Buffer) => {
   const topicMetadata = decodeTopic(topic);
+  // filter topics that are not supported
   if (!topicMetadata) {
-    throw new ProcessingError("Could not decode topic", null, { topic });
+    return;
   }
 
   const data = decodeMQTTMessage(message);

@@ -25,11 +25,8 @@ export const decodeMessage = (message: string): any => {
     buffer = Buffer.from(message, "base64");
   } else {
     const d = message.split("").map((char) => char.charCodeAt(0));
-    console.log(d);
     buffer = Buffer.from(d);
   }
-
-  console.log("Buffer is", buffer.join("x"));
 
   return decodeBuffer(buffer);
 };

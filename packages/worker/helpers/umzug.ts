@@ -19,7 +19,6 @@ export const getUmzug = async (): Promise<UmzugType> => {
 
   const { migrations } = await import("../migrations");
 
-  console.log("migrations are", migrations);
   umzug = new Umzug({
     migrations: migrations as any,
     context: { dbQuery },

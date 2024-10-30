@@ -18,6 +18,8 @@ const migrateIfNecessary = async () => {
   if (pending.length) {
     console.log("Running pending migrations");
     await umzug.up();
+    console.log("Migration finished. Restarting");
+    process.exit();
   } else {
     console.log("No pending migrations");
   }
@@ -41,14 +43,7 @@ export const start = async () => {
   };
 
   const client = await mqtt.connectAsync("", connectionData);
-  console.log("Creating subscriptions!");
-  client.subscribeAsync("+/2/e/#");
-  client.subscribeAsync("+/+/2/e/#");
-  client.subscribeAsync("+/+/+/2/e/#");
-  client.subscribeAsync("+/+/+/+/2/e/#");
-  client.subscribeAsync("+/2/map/#");
-  client.subscribeAsync("+/+/2/map/#");
-  client.subscribeAsync("+/+/+/2/map/#");
-  client.subscribeAsync("+/+/+/+/2/map/#");
   client.on("message", onMessage);
+  console.log("Creating subscriptions!");
+  await client.subscribeAsync(config.mqtt.subscriptions);
 };

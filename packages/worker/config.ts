@@ -6,6 +6,18 @@ const ConfigSchema = z.object({
     port: z.number({ coerce: true }).default(1883),
     username: z.string().nullish(),
     password: z.string().nullish(),
+    subscriptions: z
+      .array(z.string())
+      .default([
+        "+/2/e/#",
+        "+/+/2/e/#",
+        "+/+/+/2/e/#",
+        "+/+/+/+/2/e/#",
+        "+/2/map/#",
+        "+/+/2/map/#",
+        "+/+/+/2/map/#",
+        "+/+/+/+/2/map/#",
+      ]),
   }),
   db: z.object({
     host: z.string(),
@@ -25,6 +37,9 @@ export const config = ConfigSchema.parse({
     port: process.env.MQTT_PORT,
     username: process.env.MQTT_USERNAME,
     password: process.env.MQTT_PASSWORD,
+    subscriptions:
+      process.env.MQTT_SUBSCRIPTIONS?.split(",").map((val) => val.trim()) ??
+      undefined,
   },
   db: {
     host: process.env.DB_HOST,
