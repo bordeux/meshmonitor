@@ -29,6 +29,38 @@ const MapContainerStyled = styled(MapContainer)`
   }
 `;
 
+const NodeMarker: React.FC<{ node: Node; setNodeId: any }> = ({
+  node,
+  setNodeId,
+}) => {
+  if (!node.position) {
+    return;
+  }
+  const cords = node.position.coordinates;
+  const id = String(node.id.id);
+  const pin = new LatLng(cords[0], cords[1], node.position_altitude);
+  return (
+    <Marker
+      position={pin}
+      key={id}
+      eventHandlers={{
+        popupopen: () => {
+          setNodeId(node.id);
+        },
+        popupclose: () => {
+          setNodeId(null);
+        },
+      }}
+    >
+      <Popup>
+        <Box>
+          <NodeInfo nodeId={String(id)} />
+        </Box>
+      </Popup>
+    </Marker>
+  );
+};
+
 const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
   const [nodeId, setNodeId] = React.useState<RecordId | null>(node?.id || null);
 
@@ -68,33 +100,15 @@ const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
         style={{ height: "100%", width: "100%" }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
         <MarkerClusterGroup>
           {nodes?.map((node) => {
-            if (!node.position) {
-              return;
-            }
-            const cords = node.position.coordinates;
-            const id = String(node.id.id);
-            const pin = new LatLng(cords[0], cords[1], node.position_altitude);
             return (
-              <Marker
-                position={pin}
-                key={id}
-                eventHandlers={{
-                  popupopen: () => {
-                    setNodeId(node.id);
-                  },
-                  popupclose: () => {
-                    setNodeId(null);
-                  },
-                }}
-              >
-                <Popup>
-                  <Box>
-                    <NodeInfo nodeId={String(id)} />
-                  </Box>
-                </Popup>
-              </Marker>
+              <NodeMarker
+                node={node}
+                setNodeId={setNodeId}
+                key={String(node.id.id)}
+              />
             );
           })}
         </MarkerClusterGroup>
