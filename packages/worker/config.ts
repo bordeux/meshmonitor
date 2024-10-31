@@ -21,8 +21,8 @@ const ConfigSchema = z.object({
   }),
   db: z.object({
     host: z.string(),
-    port: z.number({ coerce: true }).default(1883),
-    username: z.string(),
+    port: z.number({ coerce: true }).default(8000),
+    username: z.string().default("root"),
     password: z.string(),
     name: z.string({ coerce: true }).default("meshtastic"),
     namespace: z.object({
