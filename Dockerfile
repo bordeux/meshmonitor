@@ -11,7 +11,7 @@ RUN bun run frontend:build
 
 
 FROM builder AS worker-build
-RUN bun run worker:build
+RUN bun run worker:build:bun
 
 
 FROM builder AS docker-helper-build
@@ -38,7 +38,7 @@ CMD ["-g", "daemon off;"]
 
 
 FROM bun AS worker
-COPY --from=worker-build /app/dist/worker /worker
+COPY --from=worker-build /app/dist/worker_bun /worker
 RUN chmod +x /worker/index.js
 ENTRYPOINT ["bun", "run", "/worker/index.js"]
 CMD ["start"]
