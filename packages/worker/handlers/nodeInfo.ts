@@ -5,6 +5,7 @@ import { RecordId } from "surrealdb";
 import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
@@ -19,7 +20,7 @@ export const handler = async ({
     role: message.payload.role,
     is_licensed: message.payload.isLicensed,
     public_key: bufferToHexString(message.payload.publicKey),
-    last_heard: new Date(message.rxTime * 1000),
+    last_heard: createRxTime(message.rxTime),
   };
 
   const nodeId = new RecordId("node", message.from.toString(16));

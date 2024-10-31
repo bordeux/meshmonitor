@@ -3,13 +3,14 @@ import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { StoreAndForward } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/storeforward_pb.js";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
   metadataId,
   topicMetadata,
 }: HandlerArguments<StoreAndForward>) => {
-  const messageTime = new Date(message.rxTime * 1000);
+  const messageTime = createRxTime(message.rxTime);
   const id = message.id.toString(16);
   const from = message.from.toString(16);
   const to = message.to.toString(16);

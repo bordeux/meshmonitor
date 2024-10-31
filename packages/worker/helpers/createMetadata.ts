@@ -2,6 +2,7 @@ import { DataFrame } from "./decodeMQTTMessage";
 import { TopicMetadata } from "./decodeTopic";
 import { RecordId } from "surrealdb";
 import { insert } from "../services/db/insert";
+import { createRxTime } from "./createRxTime.ts";
 
 export const createMetadata = async (
   message: DataFrame<any>,
@@ -20,7 +21,7 @@ export const createMetadata = async (
     mesh_id: messageId,
     rx_rssi: message.rxRssi,
     rx_snr: message.rxSnr,
-    time: new Date(message.rxTime * 1000),
+    time: createRxTime(message.rxTime),
     via_mqtt: message.viaMqtt,
     hop_limit: message.hopLimit,
     hop_start: message.hopStart,

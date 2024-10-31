@@ -6,6 +6,7 @@ import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { insert } from "../services/db/insert";
 import { MAIN_CHANNEL_ID } from "../../shared/Schemas/Consts.ts";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 const isChannelMessage = (from: RecordId, to: RecordId) => {
   return (
@@ -18,7 +19,7 @@ export const handler = async ({
   topicMetadata,
   metadataId,
 }: HandlerArguments<Text>) => {
-  const messageTime = new Date(message.rxTime * 1000);
+  const messageTime = createRxTime(message.rxTime);
   const from = message.from.toString(16);
 
   const id = new RecordId("message", "x" + message.id.toString(16));
