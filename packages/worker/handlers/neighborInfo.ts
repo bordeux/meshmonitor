@@ -3,6 +3,7 @@ import { NeighborInfo } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/m
 import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
@@ -12,7 +13,7 @@ export const handler = async ({
   const params = {
     neighbors_count: message.payload.neighbors.length,
     broadcast_interval_secs: message.payload.nodeBroadcastIntervalSecs,
-    last_heard: new Date(message.rxTime * 1000),
+    last_heard: createRxTime(message.rxTime),
     neighbors: message.payload.neighbors.map(
       (item) => new RecordId("node", item.nodeId.toString(16)),
     ),

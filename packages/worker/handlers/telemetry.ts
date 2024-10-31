@@ -7,6 +7,7 @@ import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { ProcessingError } from "../errors/ProcessingError";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
@@ -23,7 +24,7 @@ export const handler = async ({
   const params = {
     [type]: meshtasticObjectToSnakeCase(message.payload.variant.value),
     [`has_${type}`]: true,
-    last_heard: new Date(message.rxTime * 1000),
+    last_heard: createRxTime(message.rxTime),
   };
 
   const nodeId = new RecordId("node", message.from.toString(16));

@@ -4,6 +4,7 @@ import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { createGeoPointFromMesh } from "../../shared/helpers/createGeoPointFromMesh";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
@@ -24,7 +25,7 @@ export const handler = async ({
     position: point,
     position_precision_bits: message.payload.precisionBits,
     position_altitude: message.payload.altitude,
-    last_heard: new Date(message.rxTime * 1000),
+    last_heard: createRxTime(message.rxTime),
   };
 
   const nodeId = new RecordId("node", message.from.toString(16));

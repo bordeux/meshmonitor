@@ -5,6 +5,7 @@ import { camelToSnakeCase } from "../../shared/helpers/camelToSnakeCase";
 import { createRelations } from "../services/db/createRelations";
 import { bufferToHexString } from "./bufferToHexString";
 import { nanoid } from "nanoid";
+import { createRxTime } from "./createRxTime.ts";
 
 const normalizeValue = (value: unknown) => {
   if (Buffer.isBuffer(value)) {
@@ -41,7 +42,7 @@ export const createLog = async (
       type: data.type_name,
       node_from: new RecordId("node", message.from.toString(16)),
       node_to: new RecordId("node", message.to.toString(16)),
-      time: new Date(message.rxTime * 1000),
+      time: createRxTime(message.rxTime),
     }),
     createRelations({
       from: id,

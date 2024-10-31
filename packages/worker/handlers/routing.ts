@@ -7,13 +7,14 @@ import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { ProcessingError } from "../errors/ProcessingError";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
   topicMetadata,
   metadataId,
 }: HandlerArguments<Routing>) => {
-  const messageTime = new Date(message.rxTime * 1000);
+  const messageTime = createRxTime(message.rxTime);
   const from = message.from.toString(16);
   const to = message.to.toString(16);
   const caseName = message.payload.variant.case;

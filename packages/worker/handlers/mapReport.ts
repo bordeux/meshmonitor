@@ -5,6 +5,7 @@ import { merge } from "../services/db/merge";
 import { HandlerArguments } from "./index";
 import { createRelations } from "../services/db/createRelations";
 import { createGeoPointFromMesh } from "../../shared/helpers/createGeoPointFromMesh";
+import { createRxTime } from "../helpers/createRxTime.ts";
 
 export const handler = async ({
   message,
@@ -39,7 +40,7 @@ export const handler = async ({
     has_default_channel: message.payload.hasDefaultChannel,
     num_online_local_nodes: message.payload.numOnlineLocalNodes,
     region: message.payload.region,
-    last_heard: new Date(),
+    last_heard: createRxTime(message.rxTime),
     ...positionData,
   };
 
