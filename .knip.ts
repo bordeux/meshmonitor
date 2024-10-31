@@ -12,7 +12,12 @@ const config: KnipConfig = {
   ],
   project: ["packages/**/*.{ts,tsx}", "vite.config.ts"],
   ignore: [],
-  ignoreDependencies: ["@types/leaflet.markercluster"],
+  ignoreDependencies: [
+    "@types/leaflet.markercluster",
+    "@testing-library/*",
+    "ajv",
+    "pino",
+  ],
   ignoreBinaries: ["build"],
   rules: {
     files: "error",
