@@ -39,6 +39,12 @@ jobs:
       - name: Build frontend
         run: bun run frontend:build
 
+      - name: Pack folders
+        run: >
+          tar -cvzf dist/frontend.tar.gz dist/frontend &&
+          tar -cvzf dist/worker_bun.tar.gz dist/worker_bun &&
+          tar -cvzf dist/worker_node.tar.gz dist/worker_node
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

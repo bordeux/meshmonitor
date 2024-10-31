@@ -31,15 +31,15 @@
             "label": "Worker Darwin ARM64 binary"
           },
           {
-            "path": "dist/worker_bun",
+            "path": "dist/worker_bun.tar.gz",
             "label": "Worker JS file for bun"
           },
           {
-            "path": "dist/worker_node",
+            "path": "dist/worker_node.tar.gz",
             "label": "Worker JS file for Node JS"
           },
           {
-            "path": "dist/frontend",
+            "path": "dist/frontend.tar.gz",
             "label": "Transpiled frontend ReactJS app"
           }
         ]
