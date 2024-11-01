@@ -32,7 +32,7 @@ const onMessage = async (topic: string, message: Buffer) => {
     await createErrorLog(topic, message, error);
   }
 };
-export const start = async () => {
+export const start = async (ttl: number = 0) => {
   await migrateIfNecessary();
 
   const connectionData = {
@@ -46,4 +46,14 @@ export const start = async () => {
   client.on("message", onMessage);
   console.log("Creating subscriptions!");
   await client.subscribeAsync(config.mqtt.subscriptions);
+
+  if (ttl) {
+    console.log("Registering TTL timer to ", ttl);
+    setTimeout(async () => {
+      console.log("TTL reached. Exiting");
+      await client.endAsync();
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      process.exit();
+    }, ttl * 1000);
+  }
 };
