@@ -2,7 +2,7 @@ import * as React from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { LatLng } from "leaflet";
-import { useLiveQuery } from "../../services/db/useQuery";
+import { useQuery } from "../../services/db/useQuery";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import type { Node } from "../../../shared/Schemas/NodeSchema";
 import { styled } from "@mui/material/styles";
@@ -73,7 +73,7 @@ const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
   }
 
   const nodes =
-    useLiveQuery<Node>(`
+    useQuery<Node>(`
       SELECT id,
              long_name,
              short_name,
