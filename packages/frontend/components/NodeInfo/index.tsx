@@ -13,7 +13,6 @@ import NodeAvatar from "../NodeAvatar";
 import HistoryIcon from "@mui/icons-material/History";
 import TimeAgo from "../TimeAgo";
 import { useTranslation } from "react-i18next";
-import SuspenseLoader from "../SuspenseLoader";
 
 interface NodeLinkProps {
   nodeId: string;
@@ -38,11 +37,7 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
 
   const { t } = useTranslation("nodes");
 
-  if (!loaded) {
-    return <SuspenseLoader />;
-  }
-
-  if (!data) {
+  if (loaded && !data) {
     return <Alert severity="error">Node {nodeId} not found in database</Alert>;
   }
 
@@ -59,7 +54,7 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
       <Box>
         <NodeAvatar shortName={name} />
         <Box pt={2}>
-          {data.position && (
+          {data?.position && (
             <Link
               to={generatePath("/node/:nodeId/map", {
                 nodeId: nodeId,
@@ -86,7 +81,7 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
         </Box>
       </Box>
       <Box>
-        <ListItemTextItem primary={String(data.id.id)} secondary={t("id")} />
+        <ListItemTextItem primary={String(data?.id.id)} secondary={t("id")} />
         <ListItemTextItem
           primary={data?.long_name ?? "-"}
           secondary={t("long_name")}
