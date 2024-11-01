@@ -36,12 +36,15 @@ export const createLog = async (
     );
   }
 
+  const nodeFrom = new RecordId("node", message.from.toString(16));
+  const nodeTo = new RecordId("node", message.to.toString(16));
   await Promise.all([
     insert(id, {
       data,
       type: data.type_name,
-      node_from: new RecordId("node", message.from.toString(16)),
-      node_to: new RecordId("node", message.to.toString(16)),
+      node_from: nodeFrom,
+      node_to: nodeTo,
+      _nodes: [nodeFrom, nodeTo],
       time: createRxTime(message.rxTime),
     }),
     createRelations({

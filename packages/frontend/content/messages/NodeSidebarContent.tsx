@@ -43,8 +43,8 @@ const SidebarContent: React.FC = () => {
             (IF node_from = $node THEN node_to ELSE node_from END).* as node,
             COUNT(1) as messages_count
         FROM message
-        WHERE (node_from = $node OR node_to = $node)
-        AND node_to != $mainChannel
+        WHERE _nodes CONTAINS $node
+        AND _nodes  CONTAINSNOT $mainChannel
         GROUP BY node;
     `,
     {

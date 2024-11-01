@@ -34,6 +34,7 @@ import { useTranslation } from "react-i18next";
 import { camelToSnakeCase } from "../../../shared/helpers/camelToSnakeCase.ts";
 import { mapValues } from "../../helpers/mapValues.ts";
 import { omitBy } from "../../helpers/omitBy.ts";
+import SuspenseLoader from "../SuspenseLoader";
 
 interface NodeTimeLineProps {
   nodeId: string;
@@ -69,7 +70,7 @@ const NodeTimeLine: React.FC<NodeTimeLineProps> = ({ nodeId }) => {
 
   const typesPick = omitBy(selectedEntities || {}, (val) => !val);
 
-  const { data } = useQuery<Log>(
+  const { data, loaded } = useQuery<Log>(
     `
         SELECT
           node_from.*,
@@ -79,8 +80,7 @@ const NodeTimeLine: React.FC<NodeTimeLineProps> = ({ nodeId }) => {
           *
         FROM
           log
-        WHERE
-            (node_from = $nodeId OR node_to = $nodeId)
+        WHERE _nodes CONTAINS $nodeId
         AND time <= $time
         AND type IN ($types)
         ORDER BY time DESC
@@ -155,7 +155,8 @@ const NodeTimeLine: React.FC<NodeTimeLineProps> = ({ nodeId }) => {
         </Menu>
       </ButtonsContainer>
       <Scrollbar>
-        {data?.length === 0 && (
+        {!loaded && <SuspenseLoader />}
+        {loaded && data.length === 0 && (
           <Alert
             severity="error"
             style={{
@@ -168,12 +169,11 @@ const NodeTimeLine: React.FC<NodeTimeLineProps> = ({ nodeId }) => {
           </Alert>
         )}
         <Timeline>
-          {data &&
-            data.map((log) => (
-              <Item log={log} key={String(log.id)} nodeId={nodeId} />
-            ))}
+          {data.map((log) => (
+            <Item log={log} key={String(log.id)} nodeId={nodeId} />
+          ))}
 
-          {limit === data?.length && (
+          {limit === data.length && (
             <TimelineItem>
               <TimelineOppositeContent></TimelineOppositeContent>
               <TimelineSeparator>

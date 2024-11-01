@@ -23,9 +23,12 @@ export const handler = async ({
   const from = message.from.toString(16);
 
   const id = new RecordId("message", "x" + message.id.toString(16));
+  const nodeFrom = new RecordId("node", from);
+  const nodeTo = new RecordId("node", message.to.toString(16));
   const params = {
-    node_from: new RecordId("node", from),
-    node_to: new RecordId("node", message.to.toString(16)),
+    node_from: nodeFrom,
+    node_to: nodeTo,
+    _nodes: [nodeFrom, nodeTo],
     channel: message.channel,
     channel_name: topicMetadata.channelName,
     time: messageTime,

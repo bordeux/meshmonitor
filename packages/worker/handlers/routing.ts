@@ -25,9 +25,11 @@ export const handler = async ({
   }
   const caseValue = message.payload.variant.value as Routing_Error;
   const nodeId = new RecordId("node", from);
+  const nodeTo = new RecordId("node", to);
   const params = {
     node_from: nodeId,
-    node_to: new RecordId("node", to),
+    node_to: nodeTo,
+    _nodes: [nodeId, nodeTo],
     time: messageTime,
     case_name: caseName,
     value: caseValue,

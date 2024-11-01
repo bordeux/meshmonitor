@@ -38,13 +38,11 @@ const IconButtonToggle = styled(IconButton)(
 
 const getQuery = (nodeIdSecond: string) => {
   let whereFilter = `
-    ((node_from = $nodeId AND node_to = $nodeIdSecond)
-    OR (node_to = $nodeId AND node_from = $nodeIdSecond))
+    _nodes CONTAINSALL [$nodeId, $nodeIdSecond]
   `;
   if (nodeIdSecond === "all") {
-    whereFilter = `(node_from = $nodeId OR node_to = $nodeId)
-            AND node_from != $mainChannel AND node_to != $mainChannel
-            `;
+    whereFilter = `_nodes CONTAINS $nodeId
+            AND _nodes CONTAINSNOT $mainChannel`;
   }
 
   return `SELECT *, node_from as node_from_id, node_to as node_to_id, node_from.* as node_from, node_to.* as node_to FROM message WHERE ${whereFilter} ORDER BY time DESC LIMIT $limit`;

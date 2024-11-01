@@ -15,9 +15,11 @@ export const handler = async ({
   const to = message.to.toString(16);
 
   const nodeId = new RecordId("node", from);
+  const nodeTo = new RecordId("node", to);
   const params = {
     node_from: nodeId,
-    node_to: new RecordId("node", to),
+    node_to: nodeTo,
+    _nodes: [nodeId, nodeTo],
     time: messageTime,
     route: message.payload.route.map(
       (item) => new RecordId("node", item.toString(16)),
