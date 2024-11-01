@@ -24,17 +24,17 @@ interface TopBarContentProps {
 }
 
 const NodeView: React.FC<{ nodeId: RecordId }> = ({ nodeId }) => {
-  const record = useLiveRecord<Node>(nodeId);
+  const { data } = useLiveRecord<Node>(nodeId);
   return (
     <Box display="flex" alignItems="center">
-      <NodeAvatar shortName={record?.short_name ?? ""} size={48} />
+      <NodeAvatar shortName={data?.short_name ?? ""} size={48} />
       <Box ml={1}>
         <Typography variant="h4">
-          {record?.long_name ?? record?.short_name ?? String(nodeId.id)}
+          {data?.long_name ?? data?.short_name ?? String(nodeId.id)}
         </Typography>
-        {record?.last_heard && (
+        {data?.last_heard && (
           <Typography variant="subtitle1">
-            <TimeAgo date={record?.last_heard} />
+            <TimeAgo date={data?.last_heard} />
           </Typography>
         )}
       </Box>

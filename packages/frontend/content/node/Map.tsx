@@ -23,7 +23,7 @@ const NodeMap = lazy(() => import("../../components/NodeMap"));
 const Map: React.FC = () => {
   const params = useParams();
   const navigate = useNavigate();
-  const record = useLiveRecord<Node>(
+  const { data } = useLiveRecord<Node>(
     new RecordId<string>("node", String(params.nodeId)),
   );
 
@@ -47,7 +47,7 @@ const Map: React.FC = () => {
         >
           <CloseIcon />
         </IconButton>
-        <Suspense>{record && <NodeMap node={record} />}</Suspense>
+        <Suspense>{data && <NodeMap node={data} />}</Suspense>
       </Container>
     </Modal>
   );

@@ -13,6 +13,7 @@ import NodeAvatar from "../NodeAvatar";
 import HistoryIcon from "@mui/icons-material/History";
 import TimeAgo from "../TimeAgo";
 import { useTranslation } from "react-i18next";
+import SuspenseLoader from "../SuspenseLoader";
 
 interface NodeLinkProps {
   nodeId: string;
@@ -30,12 +31,18 @@ const StackStyled = styled(Stack)`
 `;
 
 const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
-  const record = useLiveRecord<Node>(new RecordId<string>("node", nodeId));
-  const name = record?.short_name ?? record?.id.id.toString() ?? "";
+  const { data, loaded } = useLiveRecord<Node>(
+    new RecordId<string>("node", nodeId),
+  );
+  const name = data?.short_name ?? data?.id.id.toString() ?? "";
 
   const { t } = useTranslation("nodes");
 
-  if (!record) {
+  if (!loaded) {
+    return <SuspenseLoader />;
+  }
+
+  if (!data) {
     return <Alert severity="error">Node {nodeId} not found in database</Alert>;
   }
 
@@ -52,7 +59,7 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
       <Box>
         <NodeAvatar shortName={name} />
         <Box pt={2}>
-          {record?.position && (
+          {data.position && (
             <Link
               to={generatePath("/node/:nodeId/map", {
                 nodeId: nodeId,
@@ -79,18 +86,18 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
         </Box>
       </Box>
       <Box>
-        <ListItemTextItem primary={String(record.id.id)} secondary={t("id")} />
+        <ListItemTextItem primary={String(data.id.id)} secondary={t("id")} />
         <ListItemTextItem
-          primary={record?.long_name ?? "-"}
+          primary={data?.long_name ?? "-"}
           secondary={t("long_name")}
         />
         <ListItemTextItem
-          primary={record?.short_name ?? "-"}
+          primary={data?.short_name ?? "-"}
           secondary={t("short_name")}
         />
-        {record?.last_heard && (
+        {data?.last_heard && (
           <ListItemTextItem
-            primary={<TimeAgo date={record?.last_heard} />}
+            primary={<TimeAgo date={data?.last_heard} />}
             secondary={t("last_heard")}
           />
         )}

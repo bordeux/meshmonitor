@@ -11,6 +11,7 @@ import { PositionData } from "./MapEvents.ts";
 import NodeInfo from "../NodeInfo";
 import NodePositionHistory from "./NodePositionHistory";
 import { RecordId } from "surrealdb";
+import { useInterval } from "ahooks";
 
 interface MapProps {
   position?: PositionData;
@@ -61,6 +62,8 @@ const NodeMarker: React.FC<{ node: Node; setNodeId: any }> = ({
   );
 };
 
+const REFRESH_INTERVAL = 60 * 1000;
+
 const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
   const [nodeId, setNodeId] = React.useState<RecordId | null>(node?.id || null);
 
@@ -72,8 +75,7 @@ const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
     };
   }
 
-  const nodes =
-    useQuery<Node>(`
+  const { data, reload } = useQuery<Node>(`
       SELECT id,
              long_name,
              short_name,
@@ -81,7 +83,11 @@ const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
              position_altitude
       FROM node
       WHERE has_position = true
-    `) ?? (node ? [node] : []);
+    `);
+
+  useInterval(() => {
+    reload();
+  }, REFRESH_INTERVAL);
 
   if (node?.position) {
     position = {
@@ -102,7 +108,7 @@ const NodeMap: React.FC<MapProps> = ({ position, node, children }) => {
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         <MarkerClusterGroup>
-          {nodes?.map((node) => {
+          {data.map((node) => {
             return (
               <NodeMarker
                 node={node}

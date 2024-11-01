@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const Metrics: React.FC = () => {
   const { metricType, nodeId } = useParams();
   const navigate = useNavigate();
-  const record = useLiveRecord<Node>(
+  const { data } = useLiveRecord<Node>(
     new RecordId<string>("node", String(nodeId)),
   );
   const { t } = useTranslation("nodes");
@@ -19,9 +19,7 @@ const Metrics: React.FC = () => {
   };
 
   const metrics = (
-    metricType === "device"
-      ? record?.device_metrics
-      : record?.environment_metrics
+    metricType === "device" ? data?.device_metrics : data?.environment_metrics
   ) as object;
 
   return (

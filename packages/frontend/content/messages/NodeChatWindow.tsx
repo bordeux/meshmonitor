@@ -63,7 +63,7 @@ const NodeChatWindow = () => {
   const query = getQuery(String(nodeIdSecond));
   const nodeSourceId = new RecordId("node", String(nodeId));
   const nodeSecondIdx = new RecordId("node", String(nodeIdSecond));
-  const messages = useQuery<MessageRecord>(query, {
+  const { data } = useQuery<MessageRecord>(query, {
     nodeId: nodeSourceId,
     nodeIdSecond: nodeSecondIdx,
     mainChannel: new RecordId("node", MAIN_CHANNEL_ID),
@@ -93,11 +93,11 @@ const NodeChatWindow = () => {
         />
       </ChatTopBar>
       <Box flex={1}>
-        {messages && (
+        {data && (
           <ChatContent
-            messages={messages}
+            messages={data}
             node={nodeSourceId}
-            showLoadMore={messages.length >= limit}
+            showLoadMore={data.length >= limit}
             onClickMore={() => {
               setLimit((prev) => prev + DEFAULT_LIMIT);
             }}

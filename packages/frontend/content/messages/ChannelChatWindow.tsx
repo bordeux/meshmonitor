@@ -28,7 +28,7 @@ const ChannelChatWindow = () => {
   const { nodeId } = useParams();
   const [limit, setLimit] = useState(DEFAULT_LIMIT);
   const nodeSourceId = new RecordId("node", String(nodeId));
-  const messages = useQuery<MessageRecord>(
+  const { data } = useQuery<MessageRecord>(
     `
     SELECT *, node_from as node_from_id, node_to as node_to_id, node_from.* as node_from, node_to.* as node_to
     FROM message WHERE node_to = $nodeId
@@ -44,10 +44,10 @@ const ChannelChatWindow = () => {
   return (
     <Root>
       <Box flex={1}>
-        {messages && (
+        {data && (
           <ChatContent
-            messages={messages}
-            showLoadMore={messages?.length >= limit}
+            messages={data}
+            showLoadMore={data?.length >= limit}
             onClickMore={() => {
               setLimit((prev) => prev + DEFAULT_LIMIT);
             }}

@@ -40,7 +40,7 @@ const SidebarContent: React.FC = () => {
   const navigate = useNavigate();
   const { nodeId } = useParams();
   const [search, setSearch] = useState("");
-  const result = useLiveQuery<Node>(
+  const { data } = useLiveQuery<Node>(
     `SELECT * FROM node WHERE has_private_message = true`,
   );
   return (
@@ -121,7 +121,7 @@ const SidebarContent: React.FC = () => {
 
       <Box mt={2}>
         <List disablePadding component="div">
-          {result?.map((node) => {
+          {data.map((node) => {
             if (!isNodeMatchString(node, search)) {
               return null;
             }

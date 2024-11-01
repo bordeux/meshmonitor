@@ -21,10 +21,10 @@ const RootWrapper = styled(Box)(
 
 const View: React.FC = () => {
   const { t } = useTranslation("nodes");
-  const nodes = (useLiveQuery(`
+  const { data } = useLiveQuery<Node>(`
     SELECT ${columnsList.join(", ")}
     FROM node
-  `) ?? []) as Node[];
+  `);
 
   return (
     <>
@@ -37,7 +37,7 @@ const View: React.FC = () => {
       <RootWrapper p={2}>
         <DataGrid
           name="node"
-          rows={nodes}
+          rows={data}
           columns={columns.map((column) => {
             column.headerName = t(column.field as any);
             return column;

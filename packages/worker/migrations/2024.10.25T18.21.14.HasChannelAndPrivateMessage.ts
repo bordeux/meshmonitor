@@ -26,6 +26,10 @@ export const up: MigrationFn<UmzugContext> = async (params) => {
            UPDATE $item.node_from SET has_channel_message = true;
         };
     `);
+
+    await db.query(`
+        DEFINE OVERWRITE INDEX log_timeline ON log FIELDS node_from, node_to, time, type;
+    `);
   });
 };
 export const down: MigrationFn<UmzugContext> = async (params) => {

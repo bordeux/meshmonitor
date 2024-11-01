@@ -37,7 +37,7 @@ const SidebarContent: React.FC = () => {
   const [search, setSearch] = useState("");
 
   const { nodeId, nodeIdSecond } = useParams();
-  const result = useQuery<ResultItem>(
+  const { data } = useQuery<ResultItem>(
     `SELECT
             (IF node_from = $node THEN node_to ELSE node_from END) as id,
             (IF node_from = $node THEN node_to ELSE node_from END).* as node,
@@ -120,7 +120,7 @@ const SidebarContent: React.FC = () => {
             />
           </ListItemWrapper>
           <Divider />
-          {result?.map((item) => {
+          {data.map((item) => {
             const id = item.id;
             const node = item.node;
             if (!isNodeMatchString(node, search)) {
