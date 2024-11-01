@@ -6,11 +6,11 @@ program
   .command("start")
   .description("Start the program")
   .addOption(
-    new Option("-ttl <number>", "Time to life in seconds")
+    new Option("-ttl, --time-to-live <number>", "Time to life in seconds")
       .env("WORKER_TTL")
       .default(0),
   )
-  .action(async (_, options) => {
-    const ttl = Number(options.ttl ?? 0);
+  .action(async (options) => {
+    const ttl = Number(options.timeToLive ?? 0);
     await start(ttl);
   });
