@@ -43,7 +43,7 @@ const filterPositionData = (data: PositionData[]) => {
 const NodePositionHistory: React.FC<NodePositionHistoryProps> = ({
   nodeId,
 }) => {
-  const data = useQuery(
+  const { data } = useQuery(
     `
         SELECT
           id,
@@ -63,6 +63,7 @@ const NodePositionHistory: React.FC<NodePositionHistoryProps> = ({
       limit: 5000,
     },
   );
+
   const positions = data ? filterPositionData(data as any) : [];
   if (positions.length < 2) {
     return null;

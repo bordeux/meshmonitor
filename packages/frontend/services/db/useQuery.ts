@@ -6,12 +6,20 @@ interface QueryResult extends Record<string, unknown> {
   id: RecordId;
 }
 
+interface UseQueryResult<T> {
+  data: T;
+  loaded: boolean;
+  reload: () => void;
+}
+
 export const useLiveQuery = <T extends QueryResult>(
   query: string,
   parameters: Record<string, unknown> = {},
-): T[] | null => {
+): UseQueryResult<T[]> => {
   const [result, setResult] = useState<T[] | null>(null);
   const [queryUid, setQueryUid] = useState<Uuid | null>(null);
+  const [version, setVersion] = useState(0);
+
   useEffect(() => {
     dbQuery(async (db) => {
       const result = await db.query(`${query}; LIVE ${query}`, parameters);
@@ -66,15 +74,19 @@ export const useLiveQuery = <T extends QueryResult>(
       });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, JSON.stringify(parameters)]);
+  }, [query, JSON.stringify(parameters), version]);
 
-  return result;
+  return {
+    data: result ?? [],
+    loaded: result !== null,
+    reload: () => setVersion((current) => current + 1),
+  };
 };
 
 export const useLiveRecord = <T>(
   record: RecordId,
   columns: string[] = ["*"],
-): T | null => {
+): UseQueryResult<T | null> => {
   const result = useLiveQuery(
     `SELECT ${columns.join(", ")} FROM ${record.tb} WHERE id = $id`,
     {
@@ -82,25 +94,30 @@ export const useLiveRecord = <T>(
     },
   );
 
-  if (result?.length === 1) {
-    return result[0] as T;
-  }
-
-  return null;
+  return {
+    ...result,
+    data: (result?.data[0] ?? null) as T,
+  };
 };
 
 export const useQuery = <T extends QueryResult>(
   query: string,
   parameters: Record<string, unknown> = {},
-): T[] | null => {
+): UseQueryResult<T[]> => {
   const [result, setResult] = useState<T[] | null>(null);
+  const [version, setVersion] = useState(0);
+
   useEffect(() => {
     dbQuery(async (db) => {
       const result = await db.query(query, parameters);
       setResult(result[0] as T[]);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, JSON.stringify(parameters)]);
+  }, [query, JSON.stringify(parameters), version]);
 
-  return result;
+  return {
+    data: result ?? [],
+    loaded: result !== null,
+    reload: () => setVersion((current) => current + 1),
+  };
 };

@@ -69,7 +69,7 @@ const NodeTimeLine: React.FC<NodeTimeLineProps> = ({ nodeId }) => {
 
   const typesPick = omitBy(selectedEntities || {}, (val) => !val);
 
-  const data = useQuery<Log>(
+  const { data } = useQuery<Log>(
     `
         SELECT
           node_from.*,
