@@ -13,9 +13,10 @@ interface Props {
 export const createRelations = async ({ from, to, data, id, type }: Props) => {
   const relationId = new RecordId(TABLE_NAME, id);
   return dbQuery(async (db) => {
-    await db.delete(relationId);
-    await db.relate(from, relationId, to, {
+    await db.upsert(relationId, {
       ...data,
+      in: from,
+      out: to,
       type,
       time: new Date(),
     });
