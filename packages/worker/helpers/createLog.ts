@@ -27,6 +27,10 @@ export const createLog = async (
     idString = nanoid().toString();
   }
 
+  if (message.from) {
+    idString = `${idString}x${message.from.toString(16)}`;
+  }
+
   const id = new RecordId("log", idString);
 
   const data: Record<string, any> = {};
