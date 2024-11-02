@@ -22,7 +22,7 @@ export const handler = async ({
   const messageTime = createRxTime(message.rxTime);
   const from = message.from.toString(16);
 
-  const id = new RecordId("message", "x" + message.id.toString(16));
+  const id = new RecordId("message", `${from}x${message.id.toString(16)}`);
   const nodeFrom = new RecordId("node", from);
   const nodeTo = new RecordId("node", message.to.toString(16));
   const params = {

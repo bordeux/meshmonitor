@@ -11,9 +11,9 @@ export const handler = async ({
   topicMetadata,
 }: HandlerArguments<StoreAndForward>) => {
   const messageTime = createRxTime(message.rxTime);
-  const id = message.id.toString(16);
   const from = message.from.toString(16);
   const to = message.to.toString(16);
+  const id = `${from}x${message.id.toString(16)}`;
 
   const nodeId = new RecordId("node", from);
   const nodeTo = new RecordId("node", to);

@@ -34,7 +34,7 @@ export const handler = async ({
     case_name: caseName,
     value: caseValue,
   };
-  const id = new RecordId("routing", message.id.toString(16));
+  const id = new RecordId("routing", `${nodeId.id}x${message.id.toString(16)}`);
 
   await Promise.all([
     merge(id, params),
