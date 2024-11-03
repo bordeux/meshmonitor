@@ -20,5 +20,5 @@
   "actions": "Actions",
   "firmware_version": "Version du firmware",
   "region": "Région",
-  "battery_level_description": "Niveau de la batterie : {{level}}%, Tension : {{voltage}}}V"
+  "battery_level_description": "Niveau de la batterie : {{level}}%, Tension : {{voltage}}V"
 }

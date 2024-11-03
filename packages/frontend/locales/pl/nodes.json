@@ -21,5 +21,5 @@
   "timeline": "Oś czasu",
   "firmware_version": "Wersja oprogramowania",
   "region": "Region",
-  "battery_level_description": "Poziom baterii: {{level}}%, Napięcie: {{voltage}}}V"
+  "battery_level_description": "Poziom baterii: {{level}}%, Napięcie: {{voltage}}V"
 }
