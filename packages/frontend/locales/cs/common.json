@@ -17,5 +17,6 @@
   "404.subtitle": "Je to na nás, přesunuli jsme obsah na jinou stránku.",
   "monitoring": "Monitorování",
   "utils": "Nástroje",
-  "decodeMessage": "Dekódování zpráv"
+  "decode_message": "Dekódování zpráv",
+  "position_history": "Historie pozic"
 }

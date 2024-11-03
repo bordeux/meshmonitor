@@ -17,5 +17,6 @@
   "404.subtitle": "Es liegt an uns, wir haben den Inhalt auf eine andere Seite verschoben.",
   "monitoring": "Überwachung",
   "utils": "Utils",
-  "decodeMessage": "Nachricht dekodieren"
+  "decode_message": "Nachricht dekodieren",
+  "position_history": "Positionsverlauf"
 }

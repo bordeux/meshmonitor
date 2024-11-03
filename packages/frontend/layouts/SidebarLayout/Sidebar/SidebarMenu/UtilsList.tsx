@@ -29,7 +29,7 @@ export const UtilsList = ({ closeSidebar }: MediaProps) => {
               to="/utils/decode"
               startIcon={<FactoryIcon />}
             >
-              {t("decodeMessage")}
+              {t("decode_message")}
             </Button>
           </ListItem>
         </List>
