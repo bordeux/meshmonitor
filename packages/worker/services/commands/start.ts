@@ -66,6 +66,7 @@ export const start = async (ttl: number = 0, maxMemory: number = 0) => {
   }
 
   if (maxMemory) {
+    console.log(`Setting max memory limit to ${maxMemory}MB`);
     setInterval(async () => {
       const memoryUsage = process.memoryUsage().rss / 1024 / 1024;
       if (memoryUsage < maxMemory) {
