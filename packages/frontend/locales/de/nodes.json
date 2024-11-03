@@ -17,5 +17,8 @@
   "has_position": "Hat Position",
   "has_device_metrics": "Hat Gerätemetriken",
   "has_environment_metrics": "Hat Umweltmetriken",
-  "actions": "Aktionen"
+  "actions": "Aktionen",
+  "firmware_version": "Firmware-Version",
+  "region": "Region",
+  "battery_level_description": "Batteriestatus: {{level}}%, Spannung: {{voltage}}}V"
 }

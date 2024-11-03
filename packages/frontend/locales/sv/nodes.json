@@ -17,5 +17,8 @@
   "has_position": "Har position",
   "has_device_metrics": "Har enhetens metriker",
   "has_environment_metrics": "Har miljömetriker",
-  "actions": "Åtgärder"
+  "actions": "Åtgärder",
+  "firmware_version": "Firmware-version",
+  "region": "Region",
+  "battery_level_description": "Batterinivå: {{level}}%, Spänning: {{voltage}}}V"
 }

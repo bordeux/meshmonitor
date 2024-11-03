@@ -17,5 +17,8 @@
   "has_position": "A une position",
   "has_device_metrics": "A des métriques d'appareil",
   "has_environment_metrics": "A des mesures de l'environnement",
-  "actions": "Actions"
+  "actions": "Actions",
+  "firmware_version": "Version du firmware",
+  "region": "Région",
+  "battery_level_description": "Niveau de la batterie : {{level}}%, Tension : {{voltage}}}V"
 }

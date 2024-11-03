@@ -19,5 +19,6 @@
   "has_environment_metrics": "Has environment metrics",
   "actions": "Actions",
   "firmware_version": "Firmware version",
-  "region": "Region"
+  "region": "Region",
+  "battery_level_description": "Battery level: {{level}}%, Voltage: {{voltage}}}V"
 }

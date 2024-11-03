@@ -18,5 +18,8 @@
   "has_device_metrics": "Posiada metryki urządzenia",
   "has_environment_metrics": "Posiada metryki środowiska",
   "actions": "Akcje",
-  "timeline": "Oś czasu"
+  "timeline": "Oś czasu",
+  "firmware_version": "Wersja oprogramowania",
+  "region": "Region",
+  "battery_level_description": "Poziom baterii: {{level}}%, Napięcie: {{voltage}}}V"
 }
