@@ -10,6 +10,7 @@ interface UseQueryResult<T> {
   data: T;
   loaded: boolean;
   reload: () => void;
+  version: number;
 }
 
 export const useLiveQuery = <T extends QueryResult>(
@@ -21,6 +22,7 @@ export const useLiveQuery = <T extends QueryResult>(
   const [version, setVersion] = useState(0);
 
   useEffect(() => {
+    setResult(null);
     dbQuery(async (db) => {
       const result = await db.query(`${query}; LIVE ${query}`, parameters);
 
@@ -63,6 +65,7 @@ export const useLiveQuery = <T extends QueryResult>(
 
           return current;
         });
+        setVersion(Date.now);
       });
     });
 
@@ -80,6 +83,7 @@ export const useLiveQuery = <T extends QueryResult>(
     data: result ?? [],
     loaded: result !== null,
     reload: () => setVersion((current) => current + 1),
+    version,
   };
 };
 
@@ -119,5 +123,6 @@ export const useQuery = <T extends QueryResult>(
     data: result ?? [],
     loaded: result !== null,
     reload: () => setVersion((current) => current + 1),
+    version,
   };
 };

@@ -15,7 +15,7 @@ interface MapProps {
   position?: PositionData;
   node?: Node;
   children?: React.ReactNode;
-  onSelect: (node: Node | undefined) => void;
+  onSelect?: (node: Node | undefined) => void;
 }
 
 const MapContainerStyled = styled(MapContainer)`

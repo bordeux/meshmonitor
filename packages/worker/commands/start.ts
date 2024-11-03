@@ -10,7 +10,16 @@ program
       .env("WORKER_TTL")
       .default(0),
   )
+  .addOption(
+    new Option(
+      "-memmax, --max-memory <number>",
+      "Max memory what worker can use",
+    )
+      .env("WORKER_MAX_MEMORY")
+      .default(0),
+  )
   .action(async (options) => {
     const ttl = Number(options.timeToLive ?? 0);
-    await start(ttl);
+    const maxMemory = Number(options.maxMemory ?? 0);
+    await start(ttl, maxMemory);
   });
