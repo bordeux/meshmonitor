@@ -37,7 +37,6 @@ export const UserProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     const callback = (position: GeolocationPosition) => {
-      console.log("Geolocation", position);
       setLocation({
         lat: position.coords.latitude,
         long: position.coords.longitude,

@@ -1,15 +1,13 @@
-import * as React from "react";
-import { useQuery } from "../../services/db/useQuery.ts";
-import { GeometryPoint, RecordId } from "surrealdb";
-import { createGeoPointFromMesh } from "../../../shared/helpers/createGeoPointFromMesh.ts";
-import { Polyline } from "react-leaflet/Polyline";
-import { LatLng } from "leaflet";
 import { LayerGroup } from "react-leaflet/LayerGroup";
+import { LatLng } from "leaflet";
+import * as React from "react";
+import { useContext } from "react";
+import { MapContext } from "../MapContext.tsx";
+import { Polyline } from "react-leaflet/Polyline";
 import { Circle } from "react-leaflet/Circle";
-
-interface NodePositionHistoryProps {
-  nodeId: RecordId;
-}
+import { useQuery } from "../../../services/db/useQuery.ts";
+import { createGeoPointFromMesh } from "../../../../shared/helpers/createGeoPointFromMesh.ts";
+import { GeometryPoint, RecordId } from "surrealdb";
 
 interface PositionData {
   id: RecordId;
@@ -40,9 +38,8 @@ const filterPositionData = (data: PositionData[]) => {
     });
 };
 
-const NodePositionHistory: React.FC<NodePositionHistoryProps> = ({
-  nodeId,
-}) => {
+const PositionHistory: React.FC = () => {
+  const { node } = useContext(MapContext);
   const { data } = useQuery(
     `
         SELECT
@@ -59,10 +56,14 @@ const NodePositionHistory: React.FC<NodePositionHistoryProps> = ({
         LIMIT $limit`,
     {
       types: ["meshtastic.Position", "meshtastic.MapReport"],
-      nodeId: nodeId,
+      nodeId: node?.id,
       limit: 5000,
     },
   );
+
+  if (!node) {
+    return null;
+  }
 
   const positions = data ? filterPositionData(data as any) : [];
   if (positions.length < 2) {
@@ -86,4 +87,4 @@ const NodePositionHistory: React.FC<NodePositionHistoryProps> = ({
   );
 };
 
-export default NodePositionHistory;
+export default PositionHistory;

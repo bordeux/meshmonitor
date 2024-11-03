@@ -17,12 +17,20 @@ const MapContainerStyled = styled(MapContainer)`
   .leaflet-popup-tip {
     background-color: ${(props) => props.theme.palette.background.paper};
   }
+
+  .marker-selected-icon {
+    filter: hue-rotate(135deg);
+    z-index: 99999 !important;
+  }
 `;
 
 const Map: React.FC<MapContainerProps & Partial<LeafletMap>> = (props) => {
   return (
     <MapContainerStyled scrollWheelZoom={true} {...props}>
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
       {props.children}
     </MapContainerStyled>
   );
