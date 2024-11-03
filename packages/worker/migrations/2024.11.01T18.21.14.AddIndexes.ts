@@ -28,6 +28,10 @@ export const up: MigrationFn<UmzugContext> = async (params) => {
     await db.query(`
         DEFINE INDEX OVERWRITE message_nodes ON message FIELDS _nodes CONCURRENTLY;
     `);
+
+    await db.query(`
+        DEFINE INDEX OVERWRITE log_node_from ON log FIELDS node_from, type, time CONCURRENTLY;
+    `);
   });
 };
 export const down: MigrationFn<UmzugContext> = async (params) => {
@@ -36,6 +40,7 @@ export const down: MigrationFn<UmzugContext> = async (params) => {
     await db.query("REMOVE INDEX log_timeline ON TABLE log;");
     await db.query("REMOVE INDEX node_map ON TABLE node;");
     await db.query("REMOVE INDEX message_nodes ON TABLE node;");
+    await db.query("REMOVE INDEX log_node_from ON TABLE node;");
     await db.query(`UPDATE log SET _nodes = NONE`);
     await db.query(`UPDATE message SET _nodes = NONE`);
   });

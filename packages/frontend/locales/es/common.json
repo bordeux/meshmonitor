@@ -17,5 +17,6 @@
   "404.subtitle": "Es por nosotros, hemos movido el contenido a una página diferente.",
   "monitoring": "Monitoreo",
   "utils": "Utilidades",
-  "decodeMessage": "Decodificar mensaje"
+  "decode_message": "Decodificar mensaje",
+  "position_history": "Historial de posición"
 }

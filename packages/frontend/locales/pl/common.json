@@ -17,5 +17,6 @@
   "404.subtitle": "To nasza sprawa, przenieśliśmy treść na inną stronę.",
   "monitoring": "Monitorowanie",
   "utils": "Narzędzia",
-  "decodeMessage": "Dekoduj wiadomość"
+  "decode_message": "Dekoduj wiadomość",
+  "position_history": "Historia pozycji"
 }

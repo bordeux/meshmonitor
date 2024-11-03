@@ -17,5 +17,6 @@
   "404.subtitle": "Det är vårt fel, vi har flyttat innehållet till en annan sida.",
   "monitoring": "Övervakning",
   "utils": "Verktyg",
-  "decodeMessage": "Dekodera meddelande"
+  "decode_message": "Dekodera meddelande",
+  "position_history": "Positions historia"
 }

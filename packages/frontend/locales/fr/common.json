@@ -17,5 +17,6 @@
   "404.subtitle": "C'est de notre faute, nous avons déplacé le contenu vers une autre page.",
   "monitoring": "Surveillance",
   "utils": "Utilitaires",
-  "decodeMessage": "Décoder le Message"
+  "decode_message": "Décoder le Message",
+  "position_history": "Historique des positions"
 }

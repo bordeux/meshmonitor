@@ -17,5 +17,6 @@
   "404.subtitle": "It's on us, we moved the content to a different page.",
   "monitoring": "Monitoring",
   "utils": "Utils",
-  "decodeMessage": "Decode Message"
+  "decode_message": "Decode Message",
+  "position_history": "Position history"
 }

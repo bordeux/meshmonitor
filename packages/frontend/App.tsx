@@ -4,14 +4,17 @@ import router from "./router";
 import { CssBaseline } from "@mui/material";
 import ThemeProvider from "./theme/ThemeProvider";
 import Suspense from "./components/Suspense";
+import { UserProvider } from "./contexts/UserContext.tsx";
 
 function App() {
   const content = useRoutes(router);
 
   return (
     <ThemeProvider>
-      <CssBaseline />
-      <Suspense>{content}</Suspense>
+      <UserProvider>
+        <CssBaseline />
+        <Suspense>{content}</Suspense>
+      </UserProvider>
     </ThemeProvider>
   );
 }

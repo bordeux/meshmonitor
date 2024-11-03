@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { useLiveQuery } from "../../services/db/useQuery.ts";
+import { useQuery } from "../../services/db/useQuery.ts";
 import { Outlet } from "react-router-dom";
 import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import Suspense from "../../components/Suspense";
@@ -21,7 +21,7 @@ const RootWrapper = styled(Box)(
 
 const View: React.FC = () => {
   const { t } = useTranslation("nodes");
-  const { data } = useLiveQuery<Node>(`
+  const { data } = useQuery<Node>(`
     SELECT ${columnsList.join(", ")}
     FROM node
   `);

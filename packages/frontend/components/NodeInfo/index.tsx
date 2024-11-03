@@ -13,6 +13,7 @@ import NodeAvatar from "../NodeAvatar";
 import HistoryIcon from "@mui/icons-material/History";
 import TimeAgo from "../TimeAgo";
 import { useTranslation } from "react-i18next";
+import SuspenseLoader from "../SuspenseLoader";
 
 interface NodeLinkProps {
   nodeId: string;
@@ -36,6 +37,10 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
   const name = data?.short_name ?? data?.id.id.toString() ?? "";
 
   const { t } = useTranslation("nodes");
+
+  if (!loaded) {
+    return <SuspenseLoader />;
+  }
 
   if (loaded && !data) {
     return <Alert severity="error">Node {nodeId} not found in database</Alert>;
