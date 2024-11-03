@@ -12,11 +12,12 @@
   "close": "Close",
   "show": "Show",
   "timeline": "Timeline",
-  "404.title" :  "The page you were looking for doesn't exist.",
-  "404.button" :  "Go to homepage",
+  "404.title": "The page you were looking for doesn't exist.",
+  "404.button": "Go to homepage",
   "404.subtitle": "It's on us, we moved the content to a different page.",
   "monitoring": "Monitoring",
   "utils": "Utils",
   "decode_message": "Decode Message",
-  "position_history": "Position history"
+  "position_history": "Position history",
+  "accuracy": "Accuracy"
 }

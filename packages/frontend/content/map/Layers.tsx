@@ -1,8 +1,9 @@
 import React, { PropsWithChildren, useContext } from "react";
 import NodeLayer from "./Layers/NodeLayer.tsx";
 import SelectedNodeLayer from "./Layers/SelectedNodeLayer.tsx";
-import PositionHistory from "./Layers/PositionHistory.tsx";
+import PositionHistoryLayer from "./Layers/PositionHistoryLayer.tsx";
 import { LayerType, MapContext } from "./MapContext.tsx";
+import AccuracyLayer from "./Layers/AccuracyLayer.tsx";
 
 const PickableLayer: React.FC<{ id: LayerType } & PropsWithChildren> = ({
   id,
@@ -21,7 +22,10 @@ export const Layers: React.FC = () => {
       <NodeLayer />
       <SelectedNodeLayer />
       <PickableLayer id={LayerType.POSITION_HISTORY}>
-        <PositionHistory />
+        <PositionHistoryLayer />
+      </PickableLayer>
+      <PickableLayer id={LayerType.ACCURACY}>
+        <AccuracyLayer />
       </PickableLayer>
     </>
   );

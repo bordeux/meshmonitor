@@ -3,7 +3,8 @@ import { Node } from "../../../shared/Schemas/NodeSchema.ts";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export enum LayerType {
-  POSITION_HISTORY,
+  POSITION_HISTORY = "position_history",
+  ACCURACY = "accuracy",
 }
 
 interface MapBaseContext {
@@ -19,7 +20,7 @@ interface MapContext extends MapBaseContext {
 export const MapContext = createContext<MapContext>({} as MapContext);
 
 const DEFAULT_VALUE: MapBaseContext = {
-  layers: [LayerType.POSITION_HISTORY],
+  layers: [LayerType.POSITION_HISTORY, LayerType.ACCURACY],
 };
 
 export const MapProvider: FC<PropsWithChildren> = ({ children }) => {

@@ -38,7 +38,7 @@ const filterPositionData = (data: PositionData[]) => {
     });
 };
 
-const PositionHistory: React.FC = () => {
+const PositionHistoryLayer: React.FC = () => {
   const { node } = useContext(MapContext);
   const { data } = useQuery(
     `
@@ -87,4 +87,4 @@ const PositionHistory: React.FC = () => {
   );
 };
 
-export default PositionHistory;
+export default PositionHistoryLayer;

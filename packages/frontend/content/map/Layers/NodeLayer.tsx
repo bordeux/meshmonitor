@@ -17,7 +17,8 @@ const MarkersGroup: React.FC = () => {
              long_name,
              short_name,
              position,
-             position_altitude
+             position_altitude,
+             position_precision_bits
       FROM node
       WHERE has_position = true
     `);

@@ -18,5 +18,6 @@
   "monitoring": "Övervakning",
   "utils": "Verktyg",
   "decode_message": "Dekodera meddelande",
-  "position_history": "Positions historia"
+  "position_history": "Positions historia",
+  "accuracy": "Noggrannhet"
 }

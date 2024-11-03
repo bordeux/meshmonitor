@@ -18,5 +18,6 @@
   "monitoring": "Monitorowanie",
   "utils": "Narzędzia",
   "decode_message": "Dekoduj wiadomość",
-  "position_history": "Historia pozycji"
+  "position_history": "Historia pozycji",
+  "accuracy": "Dokładność"
 }

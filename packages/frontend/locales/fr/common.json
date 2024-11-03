@@ -18,5 +18,6 @@
   "monitoring": "Surveillance",
   "utils": "Utilitaires",
   "decode_message": "Décoder le Message",
-  "position_history": "Historique des positions"
+  "position_history": "Historique des positions",
+  "accuracy": "Précision"
 }

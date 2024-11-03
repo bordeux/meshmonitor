@@ -5,8 +5,6 @@ import { useContext } from "react";
 import { LayerType, MapContext } from "./MapContext.tsx";
 import { useTranslation } from "react-i18next";
 
-const LAYERS = [{ id: LayerType.POSITION_HISTORY, name: "position_history" }];
-
 const SidebarContent: React.FC = () => {
   const { node } = useContext(MapContext);
   const { layers, setValue } = useContext(MapContext);
@@ -24,16 +22,16 @@ const SidebarContent: React.FC = () => {
           Layers
         </Typography>
 
-        {LAYERS.map((layer) => (
-          <Box pt={1} key={layer.id}>
+        {Object.values(LayerType).map((type) => (
+          <Box pt={1} key={type}>
             <FormControlLabel
-              label={t(layer.name as any)}
-              checked={layers.includes(layer.id)}
+              label={t(type as any)}
+              checked={layers.includes(type)}
               onChange={() => {
                 setValue({
-                  layers: layers.includes(layer.id)
-                    ? layers.filter((l) => l !== layer.id)
-                    : [...layers, layer.id],
+                  layers: layers.includes(type)
+                    ? layers.filter((l) => l !== type)
+                    : [...layers, type],
                 });
               }}
               control={<Checkbox />}
