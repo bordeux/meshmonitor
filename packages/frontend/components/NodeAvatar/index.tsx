@@ -11,7 +11,7 @@ interface NodeAvatarProps {
 const NodeAvatar: React.FC<NodeAvatarProps> = ({ shortName, size = 56 }) => {
   const color = randomcolor({ seed: shortName });
   return (
-    <Avatar sx={{ bgcolor: color, width: size, height: size }}>
+    <Avatar sx={{ bgcolor: color, width: size, height: size, margin: "auto" }}>
       {shortName}
     </Avatar>
   );

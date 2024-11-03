@@ -17,5 +17,7 @@
   "has_position": "Has position",
   "has_device_metrics": "Has device metrics",
   "has_environment_metrics": "Has environment metrics",
-  "actions": "Actions"
+  "actions": "Actions",
+  "firmware_version": "Firmware version",
+  "region": "Region"
 }

@@ -82,6 +82,7 @@
     "prop-types": "^15.8.1",
     "randomcolor": "^0.6.2",
     "react": "^19.0.0-rc-fb9a90fa48-20240614",
+    "react-battery-gauge": "^1.0.7",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^19.0.0-rc-fb9a90fa48-20240614",
     "react-helmet-async": "^2.0.5",

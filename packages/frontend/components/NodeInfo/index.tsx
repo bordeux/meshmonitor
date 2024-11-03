@@ -11,9 +11,15 @@ import { generatePath } from "../../helpers/generatePath.ts";
 import { Link } from "react-router-dom";
 import NodeAvatar from "../NodeAvatar";
 import HistoryIcon from "@mui/icons-material/History";
-import TimeAgo from "../TimeAgo";
 import { useTranslation } from "react-i18next";
 import SuspenseLoader from "../SuspenseLoader";
+import { HardwareModel } from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/mesh_pb";
+import {
+  Config_DeviceConfig_Role,
+  Config_LoRaConfig_RegionCode,
+} from "@buf/meshtastic_protobufs.bufbuild_es/meshtastic/config_pb";
+import NodeBattery from "../NodeBattery";
+import LastHeard from "../LastHeard";
 
 interface NodeLinkProps {
   nodeId: string;
@@ -56,7 +62,16 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
         padding: 2,
       }}
     >
-      <Box>
+      <Box
+        style={{
+          textAlign: "center",
+        }}
+      >
+        {data?.device_metrics && (
+          <Box pb={1}>
+            <NodeBattery node={data} />
+          </Box>
+        )}
         <NodeAvatar shortName={name} />
         <Box pt={2}>
           {data?.position && (
@@ -76,29 +91,62 @@ const NodeInfo: React.FC<NodeLinkProps> = ({ nodeId }) => {
           >
             <HistoryIcon />
           </Link>
-          <Link
-            to={generatePath("/message/node/:nodeId", {
-              nodeId: nodeId,
-            })}
-          >
-            <MessageIcon />
-          </Link>
+          {data?.has_private_message && (
+            <Link
+              to={generatePath("/message/node/:nodeId", {
+                nodeId: nodeId,
+              })}
+            >
+              <MessageIcon />
+            </Link>
+          )}
         </Box>
       </Box>
       <Box>
         <ListItemTextItem primary={String(data?.id.id)} secondary={t("id")} />
-        <ListItemTextItem
-          primary={data?.long_name ?? "-"}
-          secondary={t("long_name")}
-        />
-        <ListItemTextItem
-          primary={data?.short_name ?? "-"}
-          secondary={t("short_name")}
-        />
+        {data?.long_name && (
+          <ListItemTextItem
+            primary={data.long_name ?? "-"}
+            secondary={t("long_name")}
+          />
+        )}
+
         {data?.last_heard && (
           <ListItemTextItem
-            primary={<TimeAgo date={data?.last_heard} />}
+            primary={<LastHeard date={data.last_heard} />}
             secondary={t("last_heard")}
+          />
+        )}
+
+        {data?.firmware_version && (
+          <ListItemTextItem
+            primary={data.firmware_version}
+            secondary={t("firmware_version")}
+          />
+        )}
+
+        {data?.hw_model && (
+          <ListItemTextItem
+            primary={String(HardwareModel[data.hw_model]).replaceAll("_", " ")}
+            secondary={t("hw_model")}
+          />
+        )}
+        {data?.role != undefined && (
+          <ListItemTextItem
+            primary={String(Config_DeviceConfig_Role[data.role]).replaceAll(
+              "_",
+              " ",
+            )}
+            secondary={t("role")}
+          />
+        )}
+
+        {data?.region != undefined && (
+          <ListItemTextItem
+            primary={String(
+              Config_LoRaConfig_RegionCode[data.region],
+            ).replaceAll("_", " ")}
+            secondary={t("region")}
           />
         )}
       </Box>

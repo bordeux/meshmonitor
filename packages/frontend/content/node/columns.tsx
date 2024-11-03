@@ -12,10 +12,10 @@ import { geometryPointToDMS } from "../../helpers/geometryPointToDMS.ts";
 import { generatePath } from "../../helpers/generatePath.ts";
 import NodeAvatar from "../../components/NodeAvatar";
 import { Box } from "@mui/material";
-import TimeAgo from "../../components/TimeAgo";
 import { Translation } from "react-i18next";
 import MapIcon from "@mui/icons-material/Map";
 import HistoryIcon from "@mui/icons-material/History";
+import LastHeard from "../../components/LastHeard";
 
 const booleanValues = [
   "has_message",
@@ -89,7 +89,7 @@ const columnsRaw: GridColDef<Node>[] = [
       if (!params.value) {
         return null;
       }
-      return <TimeAgo date={params.value} />;
+      return <LastHeard date={params.value} />;
     },
     type: "dateTime",
   },
