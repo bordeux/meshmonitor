@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
-import { useLiveQuery } from "../../services/db/useQuery.ts";
+import { useQuery } from "../../services/db/useQuery.ts";
 import type { Node } from "../../../shared/Schemas/NodeSchema.ts";
 import { getDisplayNodeName } from "../../helpers/getDisplayNodeName.ts";
 import NodeAvatar from "../../components/NodeAvatar";
@@ -40,7 +40,7 @@ const SidebarContent: React.FC = () => {
   const navigate = useNavigate();
   const { nodeId } = useParams();
   const [search, setSearch] = useState("");
-  const { data } = useLiveQuery<Node>(
+  const { data } = useQuery<Node>(
     `SELECT * FROM node WHERE has_private_message = true`,
   );
   return (
