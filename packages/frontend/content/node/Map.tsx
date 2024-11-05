@@ -36,7 +36,6 @@ const Map: React.FC = () => {
           "?node=" +
           String(data.id.id)
         }
-        replace
       />
     );
   }

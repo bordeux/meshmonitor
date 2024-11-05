@@ -52,7 +52,7 @@ export const UserProvider: FC<PropsWithChildren> = ({ children }) => {
     return () => {
       navigator.geolocation?.clearWatch(watchID);
     };
-  });
+  }, [setLocation]);
 
   return (
     <UserContext.Provider value={{ location: userLocation, setLocation }}>
