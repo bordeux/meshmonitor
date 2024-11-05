@@ -8,5 +8,7 @@
   "channels": "Channels",
   "main_channel": "Main channel",
   "nodes": "Nodes",
-  "load_more": "Load more"
+  "load_more": "Load more",
+  "messages.description": "Stay informed with MeshMonitor’s detailed message view, displaying all messages sent through your Meshtastic network. Easily track message history, sender details, and timestamps for effective communication and network management.",
+  "messages.keywords": "MeshMonitor, Meshtastic message history, Meshtastic network messages, message tracking, message timestamps, Meshtastic communication, network management, message log"
 }

@@ -4,6 +4,7 @@ import NSNodes from "./nodes.json";
 import NSTimeline from "./timeline.json";
 import NSMessage from "./message.json";
 import NSUtils from "./utils.json";
+import NSMap from "./map.json";
 
 import Flag3x2 from "country-flag-icons/react/3x2/PL";
 import Flag1x1 from "country-flag-icons/react/1x1/PL";
@@ -23,6 +24,7 @@ const resource = <const>{
     timeline: NSTimeline,
     message: NSMessage,
     utils: NSUtils,
+    map: NSMap,
   },
   dateLocale,
   dataGridLocale,

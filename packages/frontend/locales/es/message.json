@@ -8,5 +8,7 @@
   "channels": "Canales",
   "main_channel": "Canal principal",
   "nodes": "Nodos",
-  "load_more": "Carga más"
+  "load_more": "Carga más",
+  "messages.description": "Mantente informado con la vista detallada de mensajes de MeshMonitor, que muestra todos los mensajes enviados a través de tu red Meshtastic. Haz un seguimiento fácil de la historia de los mensajes, los detalles del remitente y las marcas de tiempo para una comunicación efectiva y la gestión de la red.",
+  "messages.keywords": "MeshMonitor, historial de mensajes Meshtastic, mensajes de la red Meshtastic, seguimiento de mensajes, marcas de tiempo de mensajes, comunicación Meshtastic, gestión de la red, registro de mensajes"
 }

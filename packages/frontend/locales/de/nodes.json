@@ -20,5 +20,7 @@
   "actions": "Aktionen",
   "firmware_version": "Firmware-Version",
   "region": "Region",
-  "battery_level_description": "Batteriestatus: {{level}}%, Spannung: {{voltage}}V"
+  "battery_level_description": "Batteriestatus: {{level}}%, Spannung: {{voltage}}V",
+  "nodes.description": "Überwachen Sie Ihr Meshtastic-Netzwerk mit der umfassenden Tabellenansicht von MeshMonitor, welche alle verbundenen Knoten in einem klaren und organisierten Format anzeigt. Greifen Sie einfach auf Knotendetails, Status und Konnektivität zu für eine effiziente Netzwerkverwaltung.",
+  "nodes.keywords": "MeshMonitor, Meshtastic Knotentabelle, Meshtastic Netzwerküberwachung, Knotenstatus Tabelle, Konnektivitätsverwaltung, Meshtastic Knotendetails, Netzwerkleistung, organisierte Knotendaten"
 }

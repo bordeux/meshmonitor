@@ -8,5 +8,7 @@
   "channels": "Kanály",
   "main_channel": "Hlavní kanál",
   "nodes": "Uzly",
-  "load_more": "Načíst další"
+  "load_more": "Načíst další",
+  "messages.description": "Buďte informováni s detailním zobrazením zpráv MeshMonitor, které zobrazuje všechny zprávy odeslané prostřednictvím vaší sítě Meshtastic. Snadno sledujte historii zpráv, detaily o odesílateli a časové razítka pro efektivní komunikaci a správu sítě.",
+  "messages.keywords": "MeshMonitor, historie zpráv Meshtastic, zprávy sítě Meshtastic, sledování zpráv, časová razítka zpráv, komunikace Meshtastic, správa sítě, záznam zpráv"
 }

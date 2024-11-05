@@ -8,5 +8,7 @@
   "channels": "Canaux",
   "main_channel": "Canal principal",
   "nodes": "Noeuds",
-  "load_more": "Charger plus"
+  "load_more": "Charger plus",
+  "messages.description": "Restez informé avec la vue détaillée des messages de MeshMonitor, affichant tous les messages envoyés via votre réseau Meshtastic. Suivez facilement l'historique des messages, les détails de l'expéditeur et les horodatages pour une communication et une gestion efficaces du réseau.",
+  "messages.keywords": "MeshMonitor, historique des messages Meshtastic, messages du réseau Meshtastic, suivi des messages, horodatages des messages, communication Meshtastic, gestion du réseau, journal des messages"
 }

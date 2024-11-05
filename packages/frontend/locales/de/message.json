@@ -8,5 +8,7 @@
   "channels": "Kanäle",
   "main_channel": "Hauptkanal",
   "nodes": "Knoten",
-  "load_more": "Lade mehr"
+  "load_more": "Lade mehr",
+  "messages.description": "Bleiben Sie mit der detaillierten Nachrichtenansicht von MeshMonitor informiert, die alle über Ihr Meshtastic-Netzwerk gesendete Nachrichten anzeigt. Verfolgen Sie ganz einfach die Nachrichtenhistorie, Absenderdetails und Zeitstempel für eine effektive Kommunikation und Netzwerkverwaltung.",
+  "messages.keywords": "MeshMonitor, Meshtastic Nachrichtenverlauf, Meshtastic Netzwerknachrichten, Nachrichtenverfolgung, Nachrichten-Zeitstempel, Meshtastic Kommunikation, Netzwerkverwaltung, Nachrichtenprotokoll"
 }

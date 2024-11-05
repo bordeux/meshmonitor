@@ -20,5 +20,7 @@
   "actions": "Akce",
   "firmware_version": "Verze firmware",
   "region": "Region",
-  "battery_level_description": "Úroveň baterie: {{level}}%, Napětí: {{voltage}}V"
+  "battery_level_description": "Úroveň baterie: {{level}}%, Napětí: {{voltage}}V",
+  "nodes.description": "Monitorujte svou síť Meshtastic s komplexním tabulkovým zobrazením MeshMonitor, který zobrazuje všechny připojené uzly v přehledném a organizovaném formátu. Snadno přistupujte k podrobnostem uzlu, stavu a konektivitě pro efektivní správu sítě.",
+  "nodes.keywords": "MeshMonitor, tabulka uzlů Meshtastic, monitorování sítě Meshtastic, tabulka stavů uzlů, správa konektivity, podrobnosti o uzlu Meshtastic, výkon sítě, organizovaná data uzlů"
 }

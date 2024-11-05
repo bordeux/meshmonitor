@@ -20,5 +20,7 @@
   "actions": "Actions",
   "firmware_version": "Version du firmware",
   "region": "Région",
-  "battery_level_description": "Niveau de la batterie : {{level}}%, Tension : {{voltage}}V"
+  "battery_level_description": "Niveau de la batterie : {{level}}%, Tension : {{voltage}}V",
+  "nodes.description": "Surveillez votre réseau Meshtastic avec la vue complète du tableau de MeshMonitor, affichant tous les nœuds connectés dans un format clair et organisé. Accédez facilement aux détails du nœud, à son état et à sa connectivité pour une gestion efficace du réseau.",
+  "nodes.keywords": "MeshMonitor, tableau de nœuds Meshtastic, surveillance du réseau Meshtastic, tableau d'état des nœuds, gestion de la connectivité, détails des nœuds Meshtastic, performance du réseau, données de nœuds organisées"
 }

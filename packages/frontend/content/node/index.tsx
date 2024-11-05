@@ -30,6 +30,8 @@ const View: React.FC = () => {
     <>
       <Helmet>
         <title>{t("nodes_list")}</title>
+        <meta name="description" content={t("nodes.description")} />
+        <meta name="keywords" content={t("nodes.keywords")} />
       </Helmet>
       <Suspense>
         <Outlet />

@@ -20,5 +20,7 @@
   "actions": "Acciones",
   "firmware_version": "Versión de firmware",
   "region": "Región",
-  "battery_level_description": "Nivel de batería: {{level}}%, Voltaje: {{voltage}}V"
+  "battery_level_description": "Nivel de batería: {{level}}%, Voltaje: {{voltage}}V",
+  "nodes.description": "Supervisa tu red Meshtastic con la vista de tabla integral de MeshMonitor, que muestra todos los nodos conectados en un formato claro y organizado. Accede fácilmente a los detalles del nodo, el estado y la conectividad para una gestión de red eficiente.",
+  "nodes.keywords": "MeshMonitor, tabla de nodos Meshtastic, monitoreo de la red Meshtastic, tabla de estados de nodos, gestión de la conectividad, detalles del nodo Meshtastic, rendimiento de la red, datos del nodo organizados"
 }

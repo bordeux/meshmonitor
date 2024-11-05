@@ -20,5 +20,7 @@
   "actions": "Åtgärder",
   "firmware_version": "Firmware-version",
   "region": "Region",
-  "battery_level_description": "Batterinivå: {{level}}%, Spänning: {{voltage}}V"
+  "battery_level_description": "Batterinivå: {{level}}%, Spänning: {{voltage}}V",
+  "nodes.description": "Övervaka ditt Meshtastic-nätverk med MeshMonitors omfattande tabellvy, som visar alla anslutna noder i ett tydligt och organiserat format. Kom åt noddetaljer, status och anslutning för effektiv nätverkshantering lätt.",
+  "nodes.keywords": "MeshMonitor, Meshtastic nodtabell, övervakning av Meshtastic-nätverk, nodstatus tabell, anslutningshantering, Meshtastic noddetaljer, nätverkets prestanda, organiserad noddata"
 }

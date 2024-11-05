@@ -20,5 +20,7 @@
   "actions": "Actions",
   "firmware_version": "Firmware version",
   "region": "Region",
-  "battery_level_description": "Battery level: {{level}}%, Voltage: {{voltage}}V"
+  "battery_level_description": "Battery level: {{level}}%, Voltage: {{voltage}}V",
+  "nodes.description": "Monitor your Meshtastic network with MeshMonitor’s comprehensive table view, displaying all connected nodes in a clear and organized format. Easily access node details, status, and connectivity for efficient network management.",
+  "nodes.keywords": "MeshMonitor, Meshtastic node table, Meshtastic network monitoring, node status table, connectivity management, Meshtastic node details, network performance, organized node data"
 }

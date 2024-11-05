@@ -3,6 +3,7 @@ import NSLocalization from "./localization.json";
 import NSNodes from "./nodes.json";
 import NSTimeline from "./timeline.json";
 import NSMessage from "./message.json";
+import NSMap from "./map.json";
 import NSUtils from "./utils.json";
 import { enGB as dateLocale } from "date-fns/locale/en-GB";
 import Flag3x2 from "country-flag-icons/react/3x2/GB";
@@ -21,6 +22,7 @@ const resource = <const>{
     timeline: NSTimeline,
     utils: NSUtils,
     message: NSMessage,
+    map: NSMap,
   },
   dateLocale,
   dataGridLocale,

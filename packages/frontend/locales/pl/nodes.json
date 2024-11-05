@@ -21,5 +21,7 @@
   "timeline": "Oś czasu",
   "firmware_version": "Wersja oprogramowania",
   "region": "Region",
-  "battery_level_description": "Poziom baterii: {{level}}%, Napięcie: {{voltage}}V"
+  "battery_level_description": "Poziom baterii: {{level}}%, Napięcie: {{voltage}}V",
+  "nodes.description": "Monitoruj swoją sieć Meshtastic za pomocą MeshMonitor, który oferuje obszerny widok tabeli, wyświetlając wszystkie podłączone węzły w przejrzystym i zorganizowanym formacie. Łatwo uzyskaj dostęp do szczegółów węzła, statusu i łączności dla efektywnego zarządzania siecią.",
+  "nodes.keywords": "MeshMonitor, tabela węzłów Meshtastic, monitorowanie sieci Meshtastic, tabela statusu węzła, zarządzanie łącznością, szczegóły węzła Meshtastic, wydajność sieci, zorganizowane dane węzła"
 }

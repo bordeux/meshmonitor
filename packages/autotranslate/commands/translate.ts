@@ -7,6 +7,7 @@ import { saveTranslation } from "../helpers/saveTranslation";
 import { getCurrentLanguagesCodes } from "../helpers/getCurrentLanguagesCodes.ts";
 
 const CODE_ALL = "all";
+const BASE_LANGUAGE = "en";
 program
   .command("translate")
   .description("Translate specific language")
@@ -15,9 +16,11 @@ program
     `Language code like en, es, fr, etc. For all languages - set \`${CODE_ALL}\``,
   )
   .action(async (selectedCode) => {
-    const english = await loadTranslation("en");
+    const english = await loadTranslation(BASE_LANGUAGE);
     const languages =
-      selectedCode === CODE_ALL ? getCurrentLanguagesCodes() : [selectedCode];
+      selectedCode === CODE_ALL
+        ? getCurrentLanguagesCodes().filter((code) => code != BASE_LANGUAGE)
+        : [selectedCode];
 
     for (const langCode of languages) {
       const desiredLanguage = await loadTranslation(langCode);

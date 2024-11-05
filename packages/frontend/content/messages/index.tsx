@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import Suspense from "../../components/Suspense";
 import { Helmet } from "../../components/Helmet";
 import { useTranslation } from "react-i18next";
+import * as React from "react";
 
 export const RootWrapper = styled(Box)(
   ({ theme }) => `
@@ -23,12 +24,14 @@ export const Sidebar = styled(Box)(
 `,
 );
 
-function ApplicationsMessenger() {
+const ApplicationsMessenger: React.FC = () => {
   const { t } = useTranslation("message");
   return (
     <>
       <Helmet>
         <title>{t("messages")}</title>
+        <meta name="description" content={t("messages.description")} />
+        <meta name="keywords" content={t("messages.keywords")} />
       </Helmet>
       <RootWrapper className="Mui-FixedWrapper">
         <Sidebar
@@ -46,6 +49,6 @@ function ApplicationsMessenger() {
       </RootWrapper>
     </>
   );
-}
+};
 
 export default ApplicationsMessenger;

@@ -8,5 +8,7 @@
   "channels": "Kanały",
   "main_channel": "Główny kanał",
   "nodes": "Węzły",
-  "load_more": "Załaduj więcej"
+  "load_more": "Załaduj więcej",
+  "messages.description": "Bądź na bieżąco z MeshMonitor, który oferuje szczegółowy widok wiadomości, wyświetlając wszystkie wiadomości wysłane przez twoją sieć Meshtastic. Łatwo śledź historię wiadomości, szczegóły nadawcy i znaczniki czasu dla skutecznej komunikacji i zarządzania siecią.",
+  "messages.keywords": "MeshMonitor, historia wiadomości Meshtastic, wiadomości sieci Meshtastic, śledzenie wiadomości, znaczniki czasu wiadomości, komunikacja Meshtastic, zarządzanie siecią, log wiadomości"
 }

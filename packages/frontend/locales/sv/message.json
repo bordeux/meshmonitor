@@ -8,5 +8,7 @@
   "channels": "Kanaler",
   "main_channel": "Huvudkanal",
   "nodes": "Noder",
-  "load_more": "Ladda mer"
+  "load_more": "Ladda mer",
+  "messages.description": "Håll dig informerad med MeshMonitors detaljerade meddelandevy, som visar alla meddelanden som skickats via ditt Meshtastic-nätverk. Spåra enkelt meddelandehistorik, avsändarinformation och tidsstämplar för effektiv kommunikation och nätverkshantering.",
+  "messages.keywords": "MeshMonitor, Meshtastic meddelandehistorik, meddelanden i Meshtastic-nätverket, meddelandespårning, meddelandetidsstämplar, Meshtastic kommunikation, nätverkshantering, meddelandelogg"
 }

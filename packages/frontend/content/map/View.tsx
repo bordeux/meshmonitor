@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import * as React from "react";
 import { lazy, useContext } from "react";
 import "leaflet/dist/leaflet.css";
@@ -8,7 +7,6 @@ import RootWrapper from "../../components/RootWrapper";
 import Suspense from "../../components/Suspense";
 import { useNavigate, useParams } from "react-router-dom";
 import { generatePath } from "../../helpers/generatePath.ts";
-import { Helmet } from "../../components/Helmet";
 import { LatLng } from "leaflet";
 import { Layers } from "./Layers.tsx";
 import { UserContext } from "../../contexts/UserContext.tsx";
@@ -26,7 +24,6 @@ const Content = styled(Box)`
 const Map = lazy(() => import("../../components/Map"));
 
 const View: React.FC = () => {
-  const { t } = useTranslation();
   const params = useParams();
   const { location } = useContext(UserContext);
   const navigate = useNavigate();
@@ -46,9 +43,6 @@ const View: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t("map")}</title>
-      </Helmet>
       <RootWrapper className="Mui-FixedWrapper">
         <Content>
           <Suspense>
