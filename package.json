@@ -37,6 +37,7 @@
     "@bufbuild/protobuf": "^2.2.0",
     "ajv": "^8.17.1",
     "commander": "^12.1.0",
+    "kdtree-wasm": "^1.0.1",
     "mqtt": "^5.10.1",
     "nanoid": "^5.0.7",
     "p-queue": "^8.0.1",
