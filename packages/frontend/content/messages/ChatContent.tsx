@@ -15,7 +15,7 @@ import { MessageRecord } from "./NodeChatWindow.tsx";
 import { RecordId } from "surrealdb";
 import TimeAgo from "../../components/TimeAgo";
 import * as React from "react";
-import { PropsWithChildren, useEffect, useRef } from "react";
+import { PropsWithChildren, useLayoutEffect, useRef } from "react";
 import NodeAvatar from "../../components/NodeAvatar";
 import { useCurrentLocale } from "../../helpers/useCurrentLocale.tsx";
 import { LocaleType } from "../../locales";
@@ -175,16 +175,18 @@ const ChatContent: React.FC<ChatContentProps> = ({
 }) => {
   const { t } = useTranslation("message");
   const currentLocale = useCurrentLocale();
+  const [interacted, setInteracted] = React.useState(false);
   const messagesList = groupByDate(messages.reverse(), currentLocale);
   const ref = useRef<Scrollbars>(null);
   const depedencyRefresh = node?.id || "main";
-  useEffect(() => {
-    setTimeout(() => {
-      if (ref.current) {
+
+  useLayoutEffect(() => {
+    window.requestAnimationFrame(() => {
+      if (ref.current && !interacted) {
         ref.current.scrollToBottom();
       }
-    }, 150);
-  }, [ref, depedencyRefresh]);
+    });
+  }, [ref, depedencyRefresh, messagesList, interacted]);
 
   return (
     <Scrollbar ref={ref}>
@@ -196,7 +198,10 @@ const ChatContent: React.FC<ChatContentProps> = ({
             style={{
               marginBottom: "30px",
             }}
-            onClick={onClickMore}
+            onClick={() => {
+              setInteracted(true);
+              onClickMore?.();
+            }}
           >
             {t("load_more")}
           </Button>
